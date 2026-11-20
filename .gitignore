@@ -1,0 +1,9 @@
+node_modules/
+dist/
+.vercel/
+*.log
+.playwright-cli/
+output/playwright/
+output/model-review*/
+firmware/.pio/
+.env*

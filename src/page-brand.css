@@ -1,0 +1,18 @@
+/* WELOS shared header — carbon, wordmark, quiet engineering chrome */
+.page-brand{display:inline-flex;align-items:center;gap:12px;min-width:0;color:#F5F5F5;text-decoration:none;justify-self:start}
+.page-brand img{height:28px;width:auto;flex:0 0 auto;display:block}
+.page-brand span{display:flex;flex-direction:column;justify-content:center;border-left:1px solid rgba(245,245,245,.16);padding-left:12px;white-space:nowrap}
+.page-brand small{font:500 9px/1.2 "DM Mono",ui-monospace,monospace;letter-spacing:.16em;color:rgba(245,245,245,.6)}
+.page-header-title,.page-back{font:500 10px/1.2 "DM Mono",ui-monospace,monospace;letter-spacing:.14em;text-decoration:none;color:rgba(245,245,245,.72)}
+.page-header-title{justify-self:center}
+.page-back{display:flex;align-items:center;gap:7px;justify-self:end;transition:color .2s}
+.page-back:hover{color:#FFE135}
+.model-header,.configure-header,.topbar{background:rgba(11,11,11,.88)!important;backdrop-filter:blur(14px);border-bottom:1px solid rgba(245,245,245,.1)!important;color:#F5F5F5}
+.topbar .topbar-site,.topbar .topbar-clock{color:#F5F5F5;border-color:rgba(245,245,245,.1)}
+.topbar .topbar-site span,.topbar .topbar-clock span{color:rgba(245,245,245,.5)}
+.topbar .topbar-site b,.topbar .topbar-clock b{color:#F5F5F5}
+.topbar .control-brand{font-size:inherit;letter-spacing:normal;border-color:rgba(245,245,245,.1);padding:0 16px}
+.topbar .connection{color:#F5F5F5}
+.topbar .connection i{color:#FFE135}
+.topbar .page-brand span{display:none}
+@media(max-width:640px){.page-brand img{height:24px}.page-brand span{display:none}.page-header-title{display:none}.page-back{font-size:9px}}
