@@ -1,0 +1,195 @@
+@import "tailwindcss";
+
+/* ───────────────────────── WELOS design tokens ───────────────────────── */
+@theme {
+  /* Core palette */
+  --color-solar: #ffe135;
+  --color-flare: #ff8a00;
+  --color-carbon: #0b0b0b;
+  --color-paper: #f5f5f5;
+  --color-steel: #6b6b6b;
+  --color-amber: #b85c00;
+
+  /* Extended neutrals (derived from Carbon / Solar White) */
+  --color-ink-900: #0b0b0b;
+  --color-ink-850: #111111;
+  --color-ink-800: #161616;
+  --color-ink-700: #1f1f1f;
+  --color-ink-600: #2a2a2a;
+  --color-ink-500: #3a3a3a;
+  --color-ink-400: #8a8a8a; /* 5.7:1 on carbon — secondary text on dark */
+  --color-ink-300: #a8a8a8;
+  --color-ink-200: #d6d6d6;
+
+  /* Semantic */
+  --color-success: #3ccf91;
+  --color-warning: #ffb020;
+  --color-error: #ff5d4f;
+
+  --font-display: "Manrope Variable", "Manrope", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Inter Variable", "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: ui-monospace, "SFMono-Regular", "JetBrains Mono", Menlo, monospace;
+
+  --ease-solar: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-flow: cubic-bezier(0.65, 0, 0.35, 1);
+  --ease-ui: cubic-bezier(0.2, 0, 0, 1);
+}
+
+/* Semantic tokens (dark is the default stage; .theme-light flips surfaces) */
+:root {
+  --bg: var(--color-carbon);
+  --fg: var(--color-paper);
+  --surface: #121212;
+  --surface-2: #181818;
+  --border: rgb(245 245 245 / 0.1);
+  --border-strong: rgb(245 245 245 / 0.2);
+  --primary: var(--color-solar);
+  --primary-hover: #fff07a;
+  --primary-fg: var(--color-carbon);
+  --muted: var(--color-ink-400);
+  --focus: var(--color-solar);
+  --gradient-solar: linear-gradient(120deg, #ffe135 0%, #ff8a00 100%);
+  color-scheme: dark;
+}
+
+.theme-light {
+  --bg: var(--color-paper);
+  --fg: var(--color-carbon);
+  --surface: #ffffff;
+  --surface-2: #ececec;
+  --border: rgb(11 11 11 / 0.1);
+  --border-strong: rgb(11 11 11 / 0.22);
+  --primary: var(--color-carbon);
+  --primary-hover: #262626;
+  --primary-fg: var(--color-paper);
+  --muted: #555555; /* 6.8:1 on Solar White */
+  --focus: var(--color-amber);
+  color-scheme: light;
+  background: var(--bg);
+  color: var(--fg);
+}
+
+html {
+  background: var(--bg);
+  color: var(--fg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  font-feature-settings: "cv11", "ss01", "ss03";
+  overflow-x: clip;
+}
+
+::selection {
+  background: var(--color-solar);
+  color: var(--color-carbon);
+}
+
+:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+/* ───────────── Typography primitives ───────────── */
+@utility display {
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: -0.035em;
+  line-height: 0.95;
+}
+
+@utility eyebrow {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+@utility tabular {
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum", "zero";
+}
+
+@utility text-gradient-solar {
+  background: var(--gradient-solar);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Engineering hairline grid used behind technical sections */
+@utility bg-grid {
+  background-image:
+    linear-gradient(to right, rgb(245 245 245 / 0.045) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(245 245 245 / 0.045) 1px, transparent 1px);
+  background-size: 64px 64px;
+}
+
+/* Range input — engineering slider */
+.range {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 28px;
+  background: transparent;
+  cursor: pointer;
+  --pct: 50%;
+}
+.range::-webkit-slider-runnable-track {
+  height: 2px;
+  background: linear-gradient(to right, var(--color-solar) 0 var(--pct), rgb(245 245 245 / 0.16) var(--pct) 100%);
+}
+.range::-moz-range-track { height: 2px; background: rgb(245 245 245 / 0.16); }
+.range::-moz-range-progress { height: 2px; background: var(--color-solar); }
+.range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 14px;
+  height: 14px;
+  margin-top: -6px;
+  background: var(--color-carbon);
+  border: 2px solid var(--color-solar);
+  border-radius: 0;
+  transition: transform 150ms var(--ease-ui);
+}
+.range::-moz-range-thumb {
+  width: 12px;
+  height: 12px;
+  background: var(--color-carbon);
+  border: 2px solid var(--color-solar);
+  border-radius: 0;
+}
+.range:hover::-webkit-slider-thumb { transform: scale(1.2); }
+.range:focus-visible { outline: none; }
+.range:focus-visible::-webkit-slider-thumb { box-shadow: 0 0 0 4px rgb(255 225 53 / 0.35); }
+.range:focus-visible::-moz-range-thumb { box-shadow: 0 0 0 4px rgb(255 225 53 / 0.35); }
+
+/* Recharts: inherit our tokens */
+.recharts-cartesian-axis-tick-value { fill: var(--color-ink-400); font-size: 11px; }
+.recharts-tooltip-wrapper { outline: none; }
+
+/* Intro states: hidden only when JS runs; a CSS failsafe reveals them after 4 s */
+.js [data-intro] { opacity: 0; animation: intro-failsafe 0.6s 4s forwards; }
+@keyframes intro-failsafe { to { opacity: 1; transform: none; } }
+
+/* Reveal baseline — content is visible without JS; GSAP adds motion */
+[data-reveal] { will-change: transform, opacity; }
+
+@keyframes scrollcue {
+  0% { transform: translateY(-100%); }
+  60%, 100% { transform: translateY(200%); }
+}
