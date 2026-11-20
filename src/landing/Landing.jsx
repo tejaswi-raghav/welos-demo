@@ -241,6 +241,24 @@ function Next() {
   );
 }
 
+/** Looping film behind the closing line — fetched only when it's about to be seen. */
+function ClosingVideo() {
+  const ref = useRef(null);
+  useEffect(() => {
+    const v = ref.current;
+    if (!v || reducedMotion()) return;
+    const io = new IntersectionObserver(([e]) => {
+      if (e.isIntersecting) {
+        if (!v.src) v.src = `${import.meta.env.BASE_URL}film/loop.mp4`;
+        v.play().catch(() => {});
+      } else v.pause();
+    }, { rootMargin: "50% 0px" });
+    io.observe(v);
+    return () => io.disconnect();
+  }, []);
+  return <video ref={ref} className="closing-video" poster={`${import.meta.env.BASE_URL}film/final.webp`} muted loop playsInline preload="none" aria-hidden="true" />;
+}
+
 /* ───────────────────────── page ───────────────────────── */
 
 export function Landing() {
@@ -310,7 +328,7 @@ export function Landing() {
         </section>
 
         <section className="closing" aria-labelledby="closing-title">
-          <video className="closing-video" src="film/loop.mp4" poster="film/final.webp" autoPlay muted loop playsInline preload="none" aria-hidden="true" />
+          <ClosingVideo />
           <div className="closing-inner wrap reveal">
             <h2 id="closing-title" className="display">We were never meant<br /><span className="gradient">to fear the sun.</span></h2>
             <a className="btn btn-solar" href="configure.html">Engineer your sun <span aria-hidden="true">→</span></a>
