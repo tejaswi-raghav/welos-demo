@@ -199,7 +199,7 @@ function Capture() {
       const at = 1.4 + i * 1.6;
       tl.to(stage, { ...set(f), duration: 0.8 }, at)
         .to(q(`[data-step="${f.key}"]`), { opacity: 1, y: 0, duration: 0.5 }, at + 0.2)
-        .to(q(`[data-pin="${f.key}"]`), { opacity: 1, scale: 1, duration: 0.4 }, at + 0.3)
+        .to(q(`[data-pin="${f.key}"]`), { opacity: 1, duration: 0.4 }, at + 0.3)
         .fromTo(q(".beam"), { xPercent: -120, opacity: 0 }, { xPercent: 120, opacity: 1, duration: 0.9, ease: "power1.inOut" }, at)
         .to(q(`[data-tick="${i}"]`), { scaleX: 1, duration: 0.6 }, at);
       tl.to(q(`[data-step="${f.key}"]`), { opacity: 0, y: -20, duration: 0.4 }, at + 1.35);
