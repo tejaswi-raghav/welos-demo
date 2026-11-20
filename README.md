@@ -15,12 +15,15 @@ WELOS is an integrated solar, wind and rainwater product concept with a local, o
 
 ## Landing story (`/`)
 
-A scroll-driven film in four chapters, built with GSAP ScrollTrigger:
-1. **The Solar Figure** — sunrise reveal, glinting glasses, embers, the motto; scroll flies into the sun.
-2. **Capture** — the ring artwork with a moving spotlight on sun, wind and water, each with concept-study figures.
-3. **Engineer** — the logo assembles: the loop turns into place, the blade cuts across, the name draws in; Sense → Compare → Decide → Act.
-4. **What comes next** — the live 3D System 01 tours each subsystem and separates on scroll.
+The landing page is one continuous film — the Solar Figure clip — driven by scroll (GSAP ScrollTrigger + a canvas image sequence in `public/film/`):
 
+1. **The shot** — scrolling plays the clip as the camera pushes in on the Solar Figure.
+2. **The problem** — on the held close-up, the problem statement unfolds: abundant sun, resources that never arrive together, dust losses, and no coordination.
+3. **Into his eyes** — the camera falls into his right lens until the screen is light, and the motto appears in it.
+4. **The hero arises** — out of that light System 01 rises: the live 3D model tours each subsystem and separates on scroll.
+
+Then: the logo story (Engineer), the concept-study conditions, principles, the explore hub and a looping closing scene.
+Regenerate the frames from a new clip with ffmpeg (every 3rd frame → `film/lg` 1440 px, `film/sm` 720 px square crop).
 Reduced-motion users get the same content as a static page.
 
 ## Run
