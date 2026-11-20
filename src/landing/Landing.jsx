@@ -2,83 +2,78 @@ import React, { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
-import { Film } from "./Film.jsx";
-import { wordmark, emblem, STROKE } from "./brand.js";
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 
-const reducedMotion = () => window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+const BASE = import.meta.env.BASE_URL;
+const img = (name) => `${BASE}trinity/${name}.webp`;
 
-/* ───────────────────────── content ───────────────────────── */
+/* ───────────────────────── the trinity ───────────────────────── */
 
-const LOOP = ["Sense", "Compare", "Decide", "Act"];
-
-const SYSTEMS = [
-  { view: "overview", code: "00", name: "System 01", text: "One chassis. One canopy. Five systems engineered to work as a single machine." },
-  { view: "solar", code: "01", name: "Solar + catchment", text: "A photovoltaic canopy produces power while its perimeter gutter captures every drop of rain." },
-  { view: "wind", code: "02", name: "Urban wind", text: "A low-noise vertical-axis rotor supplements the sun when a site's wind supports it." },
-  { view: "water", code: "03", name: "Water system", text: "First flush, filtration, UV, storage and pumping — captured rain becomes a usable supply." },
-  { view: "storage", code: "04", name: "Energy core", text: "MPPT, rectification, LiFePO4 storage and a hybrid inverter on one protected DC bus." },
-  { view: "controller", code: "05", name: "Control core", text: "WELOS OS — offline-first, deterministic and safety-interlocked. The intelligence in the gap." },
+const ENERGIES = [
+  {
+    key: "solar", n: "01", name: "Solar", element: "Fire", side: "right",
+    spot: { x: "79%", y: "21%", r: "21%" },
+    tint: "rgba(255,138,0,.26)",
+    title: "The sun is our engine.",
+    text: "Every square metre of an arid rooftop receives around 2,285 kWh of sunlight a year. We turn that light into electricity — the power that runs the day.",
+    uses: [
+      "A solar canopy generates power from sunrise to sunset",
+      "Daytime surplus charges the battery for the evening",
+      "Sensors spot dust and clean only when it pays",
+    ],
+  },
+  {
+    key: "wind", n: "02", name: "Wind", element: "Air", side: "left",
+    spot: { x: "29%", y: "46%", r: "22%" },
+    tint: "rgba(200,214,226,.16)",
+    title: "The wind takes over when the sun sets.",
+    text: "Afternoon sea breezes and night air keep moving after the light is gone. We catch them so the power doesn't stop when the sun does.",
+    uses: [
+      "A compact, low-noise vertical-axis turbine",
+      "Fills the evening gap the sun leaves behind",
+      "Added only where measured wind makes it worth it",
+    ],
+  },
+  {
+    key: "water", n: "03", name: "Water", element: "Flow", side: "right",
+    spot: { x: "53%", y: "79%", r: "21%" },
+    tint: "rgba(31,170,190,.22)",
+    title: "Water is caught, cleaned and kept.",
+    text: "Rain is rare in arid cities, but it comes in powerful bursts. The same canopy that makes power also catches every storm — and turns it into water you can use.",
+    uses: [
+      "Gutters on the solar canopy collect the rain",
+      "First flush, filtration and UV make it usable",
+      "Where pipes carry pressure, a micro-turbine makes power too",
+    ],
+  },
 ];
 
-const EVIDENCE = [
-  { value: "2,285", unit: "kWh/m²/yr", label: "Solar irradiation", detail: "Annual reference used in the WELOS UAE concept study." },
-  { value: "1.1–4.5", unit: "m/s", label: "Variable wind", detail: "Onshore wind-speed range considered in the study." },
-  { value: "94.7–130", unit: "mm/yr", label: "Limited rainfall", detail: "Annual precipitation range used for concept sizing." },
-  { value: "0.29–12.7", unit: "%", label: "Solar soiling loss", detail: "Modelled loss range that motivates condition-based cleaning." },
-];
-
-const PRINCIPLES = [
-  { n: "01", title: "One surface, many jobs", text: "The solar canopy generates electricity and acts as the rain catchment — two resources from one footprint." },
-  { n: "02", title: "Only what the site earns", text: "Wind and water modules are added where local evidence supports them. A sunny roof is never forced into a windy roof's design." },
-  { n: "03", title: "Intelligence in the gap", text: "The edge controller compares expected with measured performance, protects battery reserves and coordinates energy, water and cleaning." },
-];
+const ALT = {
+  solar: "The Solar Figure standing before a blazing sun, his glasses glowing orange.",
+  wind: "The Solar Figure standing inside a storm vortex, his glasses glowing white.",
+  water: "The Solar Figure standing before a breaking ocean wave, his glasses glowing cyan.",
+};
 
 const DESTINATIONS = [
-  { n: "01", name: "3D model", text: "Orbit the assembled machine and inspect every hardware and software layer.", href: "model.html", cta: "Open the model" },
-  { n: "02", name: "Exploded view", text: "Scroll as System 01 comes apart and rebuilds, subsystem by subsystem.", href: "explore.html", cta: "Take it apart" },
-  { n: "03", name: "Configure a site", text: "Use your location's 20-year climate record, or set requirements by hand.", href: "configure.html", cta: "Engineer your sun" },
-  { n: "04", name: "WELOS OS", text: "Watch the control system dispatch energy and water in a live simulation.", href: "control.html", cta: "Open Control OS" },
+  { name: "3D model", href: "model.html" },
+  { name: "Exploded view", href: "explore.html" },
+  { name: "Configure a site", href: "configure.html" },
+  { name: "WELOS OS", href: "control.html" },
 ];
 
-/* ───────────────────────── pieces ───────────────────────── */
+const useMedia = (query) => {
+  const [match, setMatch] = useState(() => window.matchMedia(query).matches);
+  useEffect(() => {
+    const m = window.matchMedia(query);
+    const on = () => setMatch(m.matches);
+    m.addEventListener("change", on);
+    return () => m.removeEventListener("change", on);
+  }, [query]);
+  return match;
+};
 
-/** The WELOS ring + wordmark, built for animation (band, blade, cut, letters are separate targets). */
-function LogoMark({ className }) {
-  const g = emblem.gradientLine;
-  return (
-    <svg className={className} viewBox="-166 -44 562 124" role="img" aria-label="welos">
-      <defs>
-        <linearGradient id="lm-band" gradientUnits="userSpaceOnUse" x1={g.x1} y1={g.y1} x2={g.x2} y2={g.y2} gradientTransform={emblem.rotate}>
-          {emblem.gradient.map(([o, c]) => <stop key={o} offset={o} stopColor={c} />)}
-        </linearGradient>
-        <linearGradient id="lm-blade" gradientUnits="userSpaceOnUse" x1="3" y1="101" x2="126" y2="45">
-          {emblem.bladeGradient.map(([o, c]) => <stop key={o} offset={o} stopColor={c} />)}
-        </linearGradient>
-        <mask id="lm-cut" maskUnits="userSpaceOnUse" x="-40" y="-40" width="208" height="208">
-          <rect x="-40" y="-40" width="208" height="208" fill="#fff" />
-          <path data-cut d={emblem.cut} fill="#000" />
-        </mask>
-      </defs>
-      <g transform="translate(-158 -37) scale(1.05)">
-        <g mask="url(#lm-cut)">
-          <g data-band>
-            <path d={emblem.band} fill="url(#lm-band)" fillRule="evenodd" transform={emblem.rotate} />
-          </g>
-        </g>
-        <path data-blade d={emblem.blade} fill="url(#lm-blade)" />
-      </g>
-      {wordmark.map((w, i) =>
-        w.kind === "fill" ? (
-          <path key={i} data-fill d={w.d} fill="currentColor" />
-        ) : (
-          <path key={i} data-stroke d={w.d} fill="none" stroke="currentColor" strokeWidth={STROKE} strokeLinejoin="miter" />
-        ),
-      )}
-    </svg>
-  );
-}
+/* ───────────────────────── shared pieces ───────────────────────── */
 
 function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -89,11 +84,11 @@ function Header() {
   }, []);
   return (
     <header className={`site-header ${scrolled ? "is-scrolled" : ""}`}>
-      <a className="site-brand" href="./" aria-label="WELOS home"><img src="brand/welos-logo.svg" alt="welos" /></a>
-      <nav aria-label="Page sections">
-        <a href="#film">The problem</a>
-        <a href="#next">System 01</a>
-        <a href="#engineer">Engineer</a>
+      <a className="site-brand" href="./" aria-label="WELOS home"><img src={`${BASE}brand/welos-logo.svg`} alt="welos" /></a>
+      <nav aria-label="Energies">
+        <a href="#solar">Solar</a>
+        <a href="#wind">Wind</a>
+        <a href="#water">Water</a>
         <a href="#explore">Explore</a>
       </nav>
       <a className="header-cta" href="model.html">Open 3D model <span aria-hidden="true">↗</span></a>
@@ -101,245 +96,193 @@ function Header() {
   );
 }
 
-/* ───────────────────────── chapters ───────────────────────── */
+/** The logo artwork, with a spotlight that can isolate one of its three energies. */
+function LogoArt({ spot, className = "", decorative = false }) {
+  return (
+    <div className={`logo-art ${className}`} style={spot ? { "--x": spot.x, "--y": spot.y, "--r": spot.r, "--dim": 0.8 } : undefined}>
+      <img
+        src={img("logo")}
+        alt={decorative ? "" : "The WELOS logo: one loop made of the sun, the wind and the ocean, cut by a blade of light."}
+        aria-hidden={decorative || undefined}
+      />
+      <div className="logo-spot" aria-hidden="true" />
+    </div>
+  );
+}
 
-function Engineer() {
+function EnergyCopy({ e, id }) {
+  return (
+    <>
+      <p className="energy-kicker"><span>{e.n}</span> {e.name} <i>·</i> {e.element}</p>
+      <h2 className="display energy-title" id={id}>{e.title}</h2>
+      <p className="energy-text">{e.text}</p>
+      <ul className="energy-uses" aria-label={`How we use ${e.name.toLowerCase()}`}>
+        {e.uses.map((u) => <li key={u}>{u}</li>)}
+      </ul>
+    </>
+  );
+}
+
+function Together() {
+  return (
+    <div className="together-copy">
+      <p className="energy-kicker"><span>01 + 02 + 03</span> One loop</p>
+      <h2 className="display together-title">Three energies.<br /><span className="gradient">Engineered as one.</span></h2>
+      <p className="energy-text">When the sun fades, the wind picks up. When the storm passes, the tank is full. The WELOS controller decides, every moment, what to use, what to store and what to save.</p>
+      <nav className="destinations" aria-label="Explore System 01">
+        {DESTINATIONS.map((d) => <a key={d.href} href={d.href}>{d.name} <span aria-hidden="true">↗</span></a>)}
+      </nav>
+    </div>
+  );
+}
+
+/* ───────────────────────── desktop: one pinned stage ───────────────────────── */
+
+function TrinityPinned() {
   const root = useRef(null);
+
   useGSAP(() => {
     const q = gsap.utils.selector(root);
-    if (reducedMotion()) return;
-    const strokes = q("[data-stroke]");
-    strokes.forEach((p) => { const len = p.getTotalLength() + 2; gsap.set(p, { strokeDasharray: `${len} ${len}`, strokeDashoffset: len, opacity: 0 }); });
-    const tl = gsap.timeline({ scrollTrigger: { trigger: root.current, start: "top top", end: "bottom bottom", scrub: 0.6 }, defaults: { ease: "none" } });
-    tl.from(q(".eng-head > *"), { opacity: 0, y: 30, stagger: 0.1, duration: 0.4 }, 0)
-      // one loop: the band turns into place
-      .fromTo(q("[data-band]"), { opacity: 0, rotate: -150, scale: 0.6, svgOrigin: "64 64" }, { opacity: 1, rotate: 0, scale: 1, svgOrigin: "64 64", duration: 0.9, ease: "power3.out" }, 0.2)
-      // three forces named on the band
-      .fromTo(q("[data-force]"), { opacity: 0, y: 8 }, { opacity: 1, y: 0, stagger: 0.18, duration: 0.25 }, 0.9)
-      // the blade of light cuts across all three
-      .fromTo([q("[data-blade]"), q("[data-cut]")], { x: -150, opacity: 0 }, { x: 0, opacity: 1, duration: 0.5, ease: "power2.out" }, 1.55)
-      .fromTo(q(".blade-note"), { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.3 }, 1.85)
-      // the name follows
-      .fromTo(q("[data-fill]"), { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.3, ease: "power2.out" }, 2.0)
-      .set(strokes, { opacity: 1 }, 2.04)
-      .to(strokes, { strokeDashoffset: 0, stagger: 0.12, duration: 0.5, ease: "power1.inOut" }, 2.05);
-    LOOP.forEach((_, i) => tl.to(q(`[data-node="${i}"]`), { "--on": 1, duration: 0.25 }, 2.7 + i * 0.3));
-    tl.to(q(".loop-bar i"), { scaleX: 1, duration: 1.2 }, 2.7).to({}, { duration: 0.5 });
+    const logo = q(".stage-logo")[0];
+    const spot = q(".stage-logo .logo-art")[0];
+    const vw = () => window.innerWidth;
+    const vh = () => window.innerHeight;
+    // the logo docks above the text column — opposite the image
+    const dock = (side) => ({ x: () => (side === "right" ? -1 : 1) * vw() * 0.25, y: () => -vh() * 0.12, scale: 0.5 });
+
+    // opening: the logo arrives
+    gsap.timeline({ defaults: { ease: "expo.out" } })
+      .fromTo(logo, { opacity: 0, scale: 0.86, rotate: -6 }, { opacity: 1, scale: 1, rotate: 0, duration: 2.2 }, 0.1)
+      .from(q(".intro-copy > *"), { opacity: 0, y: 24, stagger: 0.12, duration: 1.4, ease: "power3.out" }, 0.8);
+
+    const tl = gsap.timeline({
+      defaults: { ease: "power2.inOut" },
+      scrollTrigger: { trigger: root.current, start: "top top", end: "bottom bottom", scrub: 0.7, invalidateOnRefresh: true },
+    });
+    tl.to(q(".intro-copy"), { opacity: 0, y: -30, duration: 0.6 }, 0.4)
+      .to(q(".scroll-cue"), { opacity: 0, duration: 0.3 }, 0.2)
+      .fromTo(q(".ticks"), { opacity: 0 }, { opacity: 1, duration: 0.4 }, 0.8);
+
+    ENERGIES.forEach((e, i) => {
+      const at = 1 + i * 2.4;
+      const fromX = e.side === "right" ? 90 : -90;
+      // the logo moves aside and isolates this energy
+      tl.to(logo, { ...dock(e.side), duration: 1 }, at)
+        .to(spot, { "--x": e.spot.x, "--y": e.spot.y, "--r": e.spot.r, "--dim": 0.84, duration: 0.9 }, at)
+        .to(q(".stage-tint"), { background: `radial-gradient(60% 75% at ${e.side === "right" ? "72%" : "28%"} 50%, ${e.tint}, rgba(11,11,11,0) 70%)`, duration: 0.9 }, at)
+        // the figure for this element appears on its side
+        .fromTo(q(`[data-panel="${e.key}"]`), { opacity: 0, x: fromX, scale: 1.06 }, { opacity: 1, x: 0, scale: 1, duration: 1, ease: "power3.out" }, at + 0.25)
+        .fromTo(q(`[data-copy="${e.key}"] > *`), { opacity: 0, y: 26 }, { opacity: 1, y: 0, stagger: 0.08, duration: 0.5, ease: "power3.out" }, at + 0.6)
+        .to(q(`[data-tick="${i}"]`), { scaleX: 1, duration: 0.6 }, at + 0.2);
+      // and leaves again
+      tl.to(q(`[data-panel="${e.key}"]`), { opacity: 0, x: -fromX * 0.4, duration: 0.7 }, at + 2.1)
+        .to(q(`[data-copy="${e.key}"] > *`), { opacity: 0, y: -24, duration: 0.5 }, at + 2.1);
+    });
+
+    // together: the whole loop, lit
+    const end = 1 + ENERGIES.length * 2.4;
+    tl.to(logo, { x: 0, y: () => -vh() * 0.1, scale: 0.66, duration: 1 }, end)
+      .to(spot, { "--r": "140%", "--dim": 0, duration: 0.9 }, end)
+      .to(q(".stage-tint"), { background: "radial-gradient(60% 60% at 50% 35%, rgba(255,138,0,.16), rgba(11,11,11,0) 70%)", duration: 0.9 }, end)
+      .to(q(".ticks"), { opacity: 0, duration: 0.4 }, end)
+      .fromTo(q(".stage-together"), { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.7 }, end + 0.5)
+      .to({}, { duration: 0.8 });
   }, { scope: root });
 
   return (
-    <section className="engineer" id="engineer" ref={root} aria-labelledby="engineer-title">
-      <div className="pin">
-        <div className="eng-head">
-          <p className="chapter"><span>02</span> Engineer</p>
-          <h2 id="engineer-title" className="display">Capturing is the easy part.<br /><span className="gradient">Engineering is the point.</span></h2>
-          <p className="lede">Our mark is the system. One loop where water, wind and sun shade into each other — and a blade of light that cuts across all three. That blade is the intelligence: it is what turns three uneven forces into one supply.</p>
+    <section className="trinity" ref={root} aria-label="Solar, wind and water">
+      {/* anchors for the header links, placed where each energy is on stage */}
+      <span id="solar" className="anchor" style={{ top: "14%" }} />
+      <span id="wind" className="anchor" style={{ top: "37%" }} />
+      <span id="water" className="anchor" style={{ top: "60%" }} />
+      <span id="explore" className="anchor" style={{ top: "86%" }} />
+      <div className="stage">
+        <div className="stage-tint" aria-hidden="true" />
+
+        {ENERGIES.map((e) => (
+          <figure className={`panel panel-${e.side}`} data-panel={e.key} key={e.key}>
+            <img src={img(e.key)} alt={ALT[e.key]} />
+          </figure>
+        ))}
+
+        <div className="stage-logo"><LogoArt /></div>
+
+        <div className="intro-copy">
+          <p className="eyebrow"><span className="dot" /> WELOS · Solar · Wind · Water</p>
+          <h1 className="display intro-title">Three energies.<br /><span className="gradient">One loop.</span></h1>
+          <p className="intro-sub">A holy trinity of energy — the sun, the wind and the water — engineered to work as one.</p>
         </div>
-        <div className="eng-mark">
-          <div className="eng-logo">
-            <LogoMark className="eng-wordmark" />
-            <span className="force-tag" data-force style={{ left: "4%", top: "97%" }}>Water</span>
-            <span className="force-tag" data-force style={{ left: "-8%", top: "34%" }}>Wind</span>
-            <span className="force-tag" data-force style={{ left: "22%", top: "-6%" }}>Sun</span>
+        <p className="scroll-cue">Scroll <i aria-hidden="true" /></p>
+
+        {ENERGIES.map((e) => (
+          <div className={`copy copy-${e.side === "right" ? "left" : "right"}`} data-copy={e.key} key={e.key}>
+            <EnergyCopy e={e} />
           </div>
-          <p className="blade-note"><i /> The blade — intelligence cutting across every resource.</p>
-        </div>
-        <div className="loop">
-          <div className="loop-bar" aria-hidden="true"><i /></div>
-          <ol>
-            {LOOP.map((step, i) => (
-              <li key={step} data-node={i}><span>0{i + 1}</span><b>{step}</b></li>
-            ))}
-          </ol>
-          <p>Every cycle, the edge controller compares expected with measured output, protects battery reserves, and decides when to store, clean and share — locally, even offline.</p>
+        ))}
+
+        <div className="stage-together"><Together /></div>
+
+        <div className="ticks" aria-hidden="true">
+          {ENERGIES.map((e, i) => <span key={e.key}><i data-tick={i} /><b>{e.name}</b></span>)}
         </div>
       </div>
     </section>
   );
 }
 
-function Next() {
+/* ───────────────────────── phones + reduced motion: stacked ───────────────────────── */
+
+function TrinityStacked() {
   const root = useRef(null);
-  const canvas = useRef(null);
-  const sceneRef = useRef(null);
-  const [active, setActive] = useState(0);
-  const [failed, setFailed] = useState(false);
-
-  // Lazy-load the real WELOS 3D model only when the chapter approaches.
-  useEffect(() => {
-    let disposed = false;
-    const io = new IntersectionObserver(async ([entry]) => {
-      if (!entry.isIntersecting || sceneRef.current) return;
-      io.disconnect();
-      try {
-        const { createWelosScene } = await import("../model/scene.js");
-        if (disposed) return;
-        sceneRef.current = createWelosScene(canvas.current, { transparent: true, controlsEnabled: false, onError: (e) => { console.error("[welos] renderer", e); setFailed(true); } });
-        if (!sceneRef.current) setFailed(true);
-      } catch (error) { console.error("[welos] 3D scene failed", error); setFailed(true); }
-    }, { rootMargin: "120% 0px" });
-    if (root.current) io.observe(root.current);
-    return () => { disposed = true; io.disconnect(); sceneRef.current?.dispose(); sceneRef.current = null; };
-  }, []);
-
-  useEffect(() => { sceneRef.current?.setView(SYSTEMS[Math.min(active, SYSTEMS.length - 1)].view); }, [active]);
-
   useGSAP(() => {
-    if (reducedMotion()) return;
-    const q = gsap.utils.selector(root);
-    // the hero arises: out of the film's light, the machine rises into place
-    gsap.timeline({ scrollTrigger: { trigger: root.current, start: "top 40%", end: "top top", scrub: 0.6 }, defaults: { ease: "none" } })
-      .fromTo(q(".next-light"), { opacity: 1 }, { opacity: 0, duration: 1, ease: "power1.in" }, 0)
-      .fromTo(q(".next-rise"), { yPercent: 38, scale: 0.62, opacity: 0.15 }, { yPercent: 0, scale: 1, opacity: 1, duration: 1, ease: "power2.out" }, 0)
-      .fromTo(q(".next-copy"), { opacity: 0, y: 50 }, { opacity: 1, y: 0, duration: 0.5 }, 0.5);
-    ScrollTrigger.create({
-      trigger: root.current, start: "top top", end: "bottom bottom",
-      onUpdate: (self) => {
-        const p = self.progress;
-        const steps = SYSTEMS.length + 1; // last step = exploded
-        const idx = Math.min(steps - 1, Math.floor(p * steps));
-        setActive(idx);
-        const ex = gsap.utils.clamp(0, 1, (p - (steps - 1) / steps) * steps * 1.4);
-        sceneRef.current?.setExploded(ex);
-        if (idx === steps - 1) sceneRef.current?.setView("overview");
-      },
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    gsap.utils.toArray(".stack-reveal", root.current).forEach((el) => {
+      gsap.from(el.children, { opacity: 0, y: 30, stagger: 0.1, duration: 0.9, ease: "power3.out", scrollTrigger: { trigger: el, start: "top 82%", once: true } });
     });
   }, { scope: root });
 
-  const exploded = active >= SYSTEMS.length;
   return (
-    <section className="next" id="next" ref={root} aria-labelledby="next-title">
-      <div className="pin">
-        <div className="next-copy">
-          <p className="chapter"><span>01</span> What comes next</p>
-          <h2 id="next-title" className="display">Out of the light:<br /><span className="gradient">System 01.</span></h2>
-          <ol className="system-steps">
-            {SYSTEMS.map((s, i) => (
-              <li key={s.view} className={i === active ? "on" : i < active ? "done" : ""}>
-                <span>{s.code}</span>
-                <div><b>{s.name}</b><p>{s.text}</p></div>
-              </li>
-            ))}
-            <li className={exploded ? "on" : ""}>
-              <span>↯</span>
-              <div><b>Taken apart</b><p>Every component, separated along the path it leaves during service.</p></div>
-            </li>
-          </ol>
-          <a className="btn btn-ghost" href="model.html">Inspect it in 3D <span aria-hidden="true">↗</span></a>
+    <div className="stack" ref={root}>
+      <section className="stack-intro">
+        <LogoArt />
+        <div className="stack-reveal">
+          <p className="eyebrow"><span className="dot" /> WELOS · Solar · Wind · Water</p>
+          <h1 className="display intro-title">Three energies.<br /><span className="gradient">One loop.</span></h1>
+          <p className="intro-sub">A holy trinity of energy — the sun, the wind and the water — engineered to work as one.</p>
         </div>
-        <div className="next-stage">
-          <div className="next-glow" aria-hidden="true" />
-          <div className="next-rise">
-            <div className="next-canvas" ref={canvas} />
-            {failed && <img className="next-fallback" src="explore/ref-full.jpg" alt="The WELOS System 01 rooftop appliance" />}
+      </section>
+      {ENERGIES.map((e) => (
+        <section className={`stack-energy stack-${e.side}`} id={e.key} key={e.key} aria-labelledby={`${e.key}-title`}>
+          <figure className="stack-figure">
+            <img src={img(`${e.key}-sm`)} alt={ALT[e.key]} loading="lazy" />
+          </figure>
+          <div className="stack-copy stack-reveal">
+            <LogoArt spot={e.spot} className="logo-mini" decorative />
+            <EnergyCopy e={e} id={`${e.key}-title`} />
           </div>
-          <span className="sim-tag">Concept model · not production CAD</span>
-        </div>
-        <div className="next-light" aria-hidden="true" />
-      </div>
-    </section>
+        </section>
+      ))}
+      <section className="stack-together stack-reveal" id="explore">
+        <LogoArt decorative />
+        <Together />
+      </section>
+    </div>
   );
-}
-
-/** Looping film behind the closing line — fetched only when it's about to be seen. */
-function ClosingVideo() {
-  const ref = useRef(null);
-  useEffect(() => {
-    const v = ref.current;
-    if (!v || reducedMotion()) return;
-    const io = new IntersectionObserver(([e]) => {
-      if (e.isIntersecting) {
-        if (!v.src) v.src = `${import.meta.env.BASE_URL}film/loop.mp4`;
-        v.play().catch(() => {});
-      } else v.pause();
-    }, { rootMargin: "50% 0px" });
-    io.observe(v);
-    return () => io.disconnect();
-  }, []);
-  return <video ref={ref} className="closing-video" poster={`${import.meta.env.BASE_URL}film/final.webp`} muted loop playsInline preload="none" aria-hidden="true" />;
 }
 
 /* ───────────────────────── page ───────────────────────── */
 
 export function Landing() {
-  const root = useRef(null);
-  useGSAP(() => {
-    if (reducedMotion()) return;
-    gsap.utils.toArray(".reveal").forEach((el) => {
-      gsap.from(el.children, { opacity: 0, y: 28, duration: 1, stagger: 0.08, ease: "power3.out", scrollTrigger: { trigger: el, start: "top 82%", once: true } });
-    });
-  }, { scope: root });
-
+  const pinned = useMedia("(min-width: 900px) and (prefers-reduced-motion: no-preference)");
   return (
-    <div className={`site ${typeof window !== "undefined" && reducedMotion() ? "rm" : ""}`} ref={root}>
+    <div className="site">
       <a className="skip" href="#main">Skip to content</a>
       <Header />
-      <main id="main">
-        <Film />
-        <Next />
-        <Engineer />
-
-        <section className="evidence wrap" aria-labelledby="evidence-title">
-          <div className="reveal section-head">
-            <p className="chapter"><span>03</span> The conditions</p>
-            <h2 id="evidence-title" className="display">The numbers behind the problem.</h2>
-            <p className="lede">Reference ranges from the WELOS UAE concept study — the conditions System 01 is engineered for.</p>
-          </div>
-          <div className="evidence-grid reveal">
-            {EVIDENCE.map((e) => (
-              <article key={e.label}>
-                <span>{e.label}</span>
-                <strong>{e.value}<small>{e.unit}</small></strong>
-                <p>{e.detail}</p>
-              </article>
-            ))}
-          </div>
-          <p className="footnote">Study inputs, not guaranteed performance at a particular address. Every site design starts with local measurement.</p>
-        </section>
-
-        <section className="principles wrap" aria-labelledby="principles-title">
-          <div className="reveal section-head">
-            <p className="chapter"><span>04</span> How we engineer</p>
-            <h2 id="principles-title" className="display">Three rules, one machine.</h2>
-          </div>
-          <div className="principle-grid reveal">
-            {PRINCIPLES.map((p) => (
-              <article key={p.n}><span>{p.n}</span><h3 className="display">{p.title}</h3><p>{p.text}</p></article>
-            ))}
-          </div>
-        </section>
-
-        <section className="explore wrap" id="explore" aria-labelledby="explore-title">
-          <div className="reveal section-head">
-            <p className="chapter"><span>05</span> Explore the work</p>
-            <h2 id="explore-title" className="display">Go inside System 01.</h2>
-            <p className="lede">Interactive concepts — engineering explorations, not fabrication-ready documents.</p>
-          </div>
-          <div className="destination-grid reveal">
-            {DESTINATIONS.map((d) => (
-              <a className="destination" key={d.name} href={d.href}>
-                <span className="d-n">{d.n} / Explore</span>
-                <h3 className="display">{d.name}</h3>
-                <p>{d.text}</p>
-                <span className="d-cta">{d.cta} <i aria-hidden="true">↗</i></span>
-              </a>
-            ))}
-          </div>
-        </section>
-
-        <section className="closing" aria-labelledby="closing-title">
-          <ClosingVideo />
-          <div className="closing-inner wrap reveal">
-            <h2 id="closing-title" className="display">We were never meant<br /><span className="gradient">to fear the sun.</span></h2>
-            <a className="btn btn-solar" href="configure.html">Engineer your sun <span aria-hidden="true">→</span></a>
-          </div>
-        </section>
-      </main>
-
+      <main id="main">{pinned ? <TrinityPinned key="pinned" /> : <TrinityStacked key="stacked" />}</main>
       <footer className="site-footer wrap">
-        <img src="brand/welos-logo.svg" alt="welos" />
+        <img src={`${BASE}brand/welos-logo.svg`} alt="welos" />
         <p>We don&rsquo;t just capture energy. We engineer what comes next.</p>
-        <p className="small">Concept hardware · figures are roadmap design targets · © {new Date().getFullYear()} WELOS</p>
+        <p className="small">Concept hardware · figures are design targets · © {new Date().getFullYear()} WELOS</p>
       </footer>
     </div>
   );

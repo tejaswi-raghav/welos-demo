@@ -15,16 +15,15 @@ WELOS is an integrated solar, wind and rainwater product concept with a local, o
 
 ## Landing story (`/`)
 
-The landing page is one continuous film — the Solar Figure clip — driven by scroll (GSAP ScrollTrigger + a canvas image sequence in `public/film/`):
+The landing page explains WELOS with four images only (`public/trinity/`) — a holy trinity of energy:
 
-1. **The shot** — scrolling plays the clip as the camera pushes in on the Solar Figure.
-2. **The problem** — on the held close-up, the problem statement unfolds: abundant sun, resources that never arrive together, dust losses, and no coordination.
-3. **Into his eyes** — the camera falls into his right lens until the screen is light, and the motto appears in it.
-4. **The hero arises** — out of that light System 01 rises: the live 3D model tours each subsystem and separates on scroll.
+1. **The logo** — one loop of sun, wind and water: *Three energies. One loop.*
+2. **Solar · Fire** — the logo moves aside and isolates its fire; the Solar Figure in the sun appears on the right, with how we use solar.
+3. **Wind · Air** — the layout flips: the storm figure on the left, the logo isolates its clouds.
+4. **Water · Flow** — the wave figure on the right, the logo isolates its ocean.
+5. **One loop** — the whole logo lights up, with links to the 3D model, exploded view, configurator and WELOS OS.
 
-Then: the logo story (Engineer), the concept-study conditions, principles, the explore hub and a looping closing scene.
-Regenerate the frames from a new clip with ffmpeg (every 3rd frame → `film/lg` 1440 px, `film/sm` 720 px square crop).
-Reduced-motion users get the same content as a static page.
+Desktop uses one pinned, scroll-scrubbed stage (GSAP ScrollTrigger). Phones and reduced-motion users get the same story as stacked sections.
 
 ## Run
 ```bash
