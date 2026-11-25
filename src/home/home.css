@@ -206,7 +206,7 @@ body[data-scene="coord"] .graph-card { opacity: 1; transform: none; }
 .os .os-panel { margin-left: 0; }
 
 /* index */
-.index { position: relative; z-index: 2; background: var(--bg); padding: 14vh clamp(18px, 4vw, 56px) 12vh; border-top: 1px solid var(--line); }
+.index { position: relative; z-index: 2; background: color-mix(in srgb, var(--bg) 70%, transparent); padding: 14vh clamp(18px, 4vw, 56px) 12vh; border-top: 1px solid var(--line); }
 .index > .t-label { margin: 0 0 18px; }
 .idx { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--text); }
 .idx a { position: relative; }
