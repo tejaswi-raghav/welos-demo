@@ -29,5 +29,35 @@
         }
       ]
     }
+  ],
+  "rewrites": [
+    {
+      "source": "/business",
+      "destination": "/commercial.html"
+    },
+    {
+      "source": "/prototype",
+      "destination": "/commercial.html"
+    },
+    {
+      "source": "/markets",
+      "destination": "/commercial.html"
+    },
+    {
+      "source": "/partners",
+      "destination": "/commercial.html"
+    },
+    {
+      "source": "/incentives",
+      "destination": "/commercial.html"
+    },
+    {
+      "source": "/investors",
+      "destination": "/commercial.html"
+    },
+    {
+      "source": "/enterprise",
+      "destination": "/commercial.html"
+    }
   ]
 }

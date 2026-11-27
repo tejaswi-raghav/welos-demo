@@ -46,14 +46,28 @@ function welosChrome() {
   };
 }
 
+function commercialRewrite(req, _res, next) {
+  if (/^\/(business|prototype|markets|partners|incentives|investors|enterprise)\/?(?:\?|$)/.test(req.url || "")) req.url = "/commercial.html";
+  next();
+}
+
 export default defineConfig({
-  plugins: [react(), vercelApi(), welosChrome()],
+  plugins: [react(), vercelApi(), welosChrome(), {
+    name: "welos-commercial-routes",
+    configureServer(server) {
+      server.middlewares.use(commercialRewrite);
+    },
+    configurePreviewServer(server) {
+      server.middlewares.use(commercialRewrite);
+    },
+  }],
   build: {
     chunkSizeWarningLimit: 900,
     rollupOptions: {
       output: { manualChunks: { three: ["three"], react: ["react", "react-dom"] } },
       input: {
         landing: resolve(__dirname, "index.html"),
+        commercial: resolve(__dirname, "commercial.html"),
         explorer: resolve(__dirname, "explorer.html"),
         control: resolve(__dirname, "control.html"),
         product: resolve(__dirname, "product.html"),

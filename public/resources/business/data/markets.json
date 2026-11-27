@@ -1,0 +1,121 @@
+[
+  {
+    "city": "Hyderabad",
+    "country": "India",
+    "priority": "Initial beachhead",
+    "customer": "Existing 3\u201310 kW residential/campus PV owners via one EPC",
+    "approvalPath": "TGSPDCL/TGNPDCL by service area; Telangana 2025 regulation",
+    "risk": "Partner access and willingness to pay remain unvalidated",
+    "sourceIds": [
+      "ts",
+      "pm",
+      "thub"
+    ],
+    "verifiedDate": "2026-11-27"
+  },
+  {
+    "city": "Dubai",
+    "country": "UAE",
+    "priority": "Second market after local repeatability",
+    "customer": "Villa portfolios, schools and daylight-load warehouses",
+    "approvalPath": "DEWA Shams Dubai; enrolled electrical/DRRG EPC",
+    "risk": "Approval, roof structure and service cost; D33 is a separate company program",
+    "sourceIds": [
+      "dewa",
+      "d33",
+      "epc",
+      "connection"
+    ],
+    "verifiedDate": "2026-11-27"
+  },
+  {
+    "city": "Abu Dhabi",
+    "country": "UAE",
+    "priority": "Regulatory hold for export-led offer",
+    "customer": "Monitoring on existing permitted commercial PV",
+    "approvalPath": "Written DoE/TAQA position before new grid proposal",
+    "risk": "2023 guide suspension conflicts with older netting framework. Export credit assumed zero",
+    "sourceIds": [
+      "abu",
+      "abu-old"
+    ],
+    "verifiedDate": "2026-11-27"
+  },
+  {
+    "city": "Sharjah",
+    "country": "UAE",
+    "priority": "Discovery only",
+    "customer": "Daytime commercial loads and existing permitted assets",
+    "approvalPath": "SEWA written project approval and export position",
+    "risk": "No verified export-credit scheme; value surplus at zero",
+    "sourceIds": [
+      "sewa"
+    ],
+    "verifiedDate": "2026-11-27"
+  },
+  {
+    "city": "Bengaluru",
+    "country": "India",
+    "priority": "Next India candidate",
+    "customer": "Campus/facility portfolios and service partners",
+    "approvalPath": "BESCOM/KERC current PPA and order",
+    "risk": "Recheck tariff, licensee, approval and ToD. No blanket national net-metering rule",
+    "sourceIds": [
+      "ka",
+      "pm"
+    ],
+    "verifiedDate": "2026-11-27"
+  },
+  {
+    "city": "Pune",
+    "country": "India",
+    "priority": "Partner research",
+    "customer": "Residential clusters and SME roofs",
+    "approvalPath": "MSEDCL/MERC current circulars",
+    "risk": "Current amendments/ToD and sanctioned load need site confirmation",
+    "sourceIds": [
+      "mh",
+      "pm"
+    ],
+    "verifiedDate": "2026-11-27"
+  },
+  {
+    "city": "Ahmedabad",
+    "country": "India",
+    "priority": "Partner research",
+    "customer": "Owner-occupied homes and SME sites",
+    "approvalPath": "Confirm Torrent or other actual distribution licensee; GUVNL pathway only where applicable",
+    "risk": "Do not apply SURYA Gujarat terms to every Ahmedabad account",
+    "sourceIds": [
+      "gj",
+      "pm"
+    ],
+    "verifiedDate": "2026-11-27"
+  },
+  {
+    "city": "Chennai",
+    "country": "India",
+    "priority": "Partner research",
+    "customer": "Residential retrofit and campus monitoring",
+    "approvalPath": "Tamil Nadu utility portal and TNERC current net feed-in rules",
+    "risk": "Network charges and net feed-in differ from Dubai monthly netting",
+    "sourceIds": [
+      "tn",
+      "pm"
+    ],
+    "verifiedDate": "2026-11-27"
+  },
+  {
+    "city": "Delhi NCR",
+    "country": "India",
+    "priority": "Separate licensee discovery",
+    "customer": "Housing societies and small commercial sites",
+    "approvalPath": "BSES pathway only in its Delhi territory; Haryana/UP separate",
+    "risk": "NCR spans states; no single tariff, subsidy or approval process",
+    "sourceIds": [
+      "delhi",
+      "pm"
+    ],
+    "verifiedDate": "2026-11-27"
+  }
+]
