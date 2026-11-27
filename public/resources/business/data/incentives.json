@@ -14,7 +14,17 @@
     "sourceIds": [
       "mbrif"
     ],
-    "verifiedDate": "2026-11-27"
+    "verifiedDate": "2026-11-27",
+    "audience": [
+      "startup"
+    ],
+    "regions": [
+      "UAE"
+    ],
+    "projectTypes": [
+      "company",
+      "research"
+    ]
   },
   {
     "id": "mbrif-g",
@@ -31,7 +41,17 @@
     "sourceIds": [
       "mbrif"
     ],
-    "verifiedDate": "2026-11-27"
+    "verifiedDate": "2026-11-27",
+    "audience": [
+      "startup"
+    ],
+    "regions": [
+      "UAE"
+    ],
+    "projectTypes": [
+      "company",
+      "research"
+    ]
   },
   {
     "id": "hub71",
@@ -48,7 +68,17 @@
     "sourceIds": [
       "hub71"
     ],
-    "verifiedDate": "2026-11-27"
+    "verifiedDate": "2026-11-27",
+    "audience": [
+      "startup"
+    ],
+    "regions": [
+      "Abu Dhabi"
+    ],
+    "projectTypes": [
+      "company",
+      "research"
+    ]
   },
   {
     "id": "khalifa",
@@ -65,7 +95,16 @@
     "sourceIds": [
       "khalifa"
     ],
-    "verifiedDate": "2026-11-27"
+    "verifiedDate": "2026-11-27",
+    "audience": [
+      "startup"
+    ],
+    "regions": [
+      "Abu Dhabi"
+    ],
+    "projectTypes": [
+      "company"
+    ]
   },
   {
     "id": "nexus",
@@ -82,7 +121,16 @@
     "sourceIds": [
       "nexus"
     ],
-    "verifiedDate": "2026-11-27"
+    "verifiedDate": "2026-11-27",
+    "audience": [
+      "startup"
+    ],
+    "regions": [
+      "Abu Dhabi"
+    ],
+    "projectTypes": [
+      "company"
+    ]
   },
   {
     "id": "sme",
@@ -99,7 +147,16 @@
     "sourceIds": [
       "sme"
     ],
-    "verifiedDate": "2026-11-27"
+    "verifiedDate": "2026-11-27",
+    "audience": [
+      "startup"
+    ],
+    "regions": [
+      "Dubai"
+    ],
+    "projectTypes": [
+      "company"
+    ]
   },
   {
     "id": "d33",
@@ -116,7 +173,17 @@
     "sourceIds": [
       "d33"
     ],
-    "verifiedDate": "2026-11-27"
+    "verifiedDate": "2026-11-27",
+    "audience": [
+      "commercial",
+      "developer"
+    ],
+    "regions": [
+      "Dubai"
+    ],
+    "projectTypes": [
+      "new-solar"
+    ]
   },
   {
     "id": "dpiit",
@@ -133,7 +200,17 @@
     "sourceIds": [
       "startup"
     ],
-    "verifiedDate": "2026-11-27"
+    "verifiedDate": "2026-11-27",
+    "audience": [
+      "startup"
+    ],
+    "regions": [
+      "India"
+    ],
+    "projectTypes": [
+      "company",
+      "research"
+    ]
   },
   {
     "id": "sisfs",
@@ -151,7 +228,17 @@
       "sisfs",
       "seed-rules"
     ],
-    "verifiedDate": "2026-11-27"
+    "verifiedDate": "2026-11-27",
+    "audience": [
+      "startup"
+    ],
+    "regions": [
+      "India"
+    ],
+    "projectTypes": [
+      "company",
+      "research"
+    ]
   },
   {
     "id": "prayas",
@@ -164,12 +251,22 @@
     "status": "Program current; centre-specific call not verified",
     "deadline": null,
     "evidence": "Lead innovator agreement, citizenship/age, IP, technical BOM and milestones",
-    "nextAction": "Select a PRAYAS Centre, verify call and version; disclose BITS support",
+    "nextAction": "Select a PRAYAS Centre, verify call and version; disclose all prior support",
     "sourceIds": [
       "prayas",
       "prayas-old"
     ],
-    "verifiedDate": "2026-11-27"
+    "verifiedDate": "2026-11-27",
+    "audience": [
+      "startup"
+    ],
+    "regions": [
+      "India"
+    ],
+    "projectTypes": [
+      "company",
+      "research"
+    ]
   },
   {
     "id": "elevate",
@@ -186,7 +283,17 @@
     "sourceIds": [
       "elevate"
     ],
-    "verifiedDate": "2026-11-27"
+    "verifiedDate": "2026-11-27",
+    "audience": [
+      "startup"
+    ],
+    "regions": [
+      "India"
+    ],
+    "projectTypes": [
+      "research",
+      "company"
+    ]
   },
   {
     "id": "thub",
@@ -203,7 +310,17 @@
     "sourceIds": [
       "thub"
     ],
-    "verifiedDate": "2026-11-27"
+    "verifiedDate": "2026-11-27",
+    "audience": [
+      "startup"
+    ],
+    "regions": [
+      "India"
+    ],
+    "projectTypes": [
+      "company",
+      "research"
+    ]
   },
   {
     "id": "tan",
@@ -220,7 +337,17 @@
     "sourceIds": [
       "tan"
     ],
-    "verifiedDate": "2026-11-27"
+    "verifiedDate": "2026-11-27",
+    "audience": [
+      "startup"
+    ],
+    "regions": [
+      "India"
+    ],
+    "projectTypes": [
+      "company",
+      "research"
+    ]
   },
   {
     "id": "pm",
@@ -237,6 +364,70 @@
     "sourceIds": [
       "pm"
     ],
-    "verifiedDate": "2026-11-27"
+    "verifiedDate": "2026-11-27",
+    "audience": [
+      "residential"
+    ],
+    "regions": [
+      "India"
+    ],
+    "projectTypes": [
+      "new-solar"
+    ]
+  },
+  {
+    "id": "fta-freezone",
+    "name": "UAE Qualifying Free Zone Person regime",
+    "country": "UAE",
+    "type": "Tax incentive",
+    "benefit": "0% on qualifying income where all conditions are met; non-qualifying income treatment differs. No grant cash.",
+    "eligibility": "Qualifying Free Zone Person, qualifying income/activity, adequate substance and current statutory conditions; professional review required",
+    "incorporation": "Qualifying Free Zone legal entity; ordinary mainland or free-zone registration alone does not establish benefit",
+    "status": "Published framework; entity eligibility and current implementing rules need review",
+    "deadline": null,
+    "evidence": "License, activities, counterparties, substance, accounts, transfer-pricing/compliance records",
+    "nextAction": "Review exact business/activity with a qualified tax adviser before claiming benefit",
+    "sourceIds": [
+      "fta-freezone"
+    ],
+    "verifiedDate": "2026-11-27",
+    "audience": [
+      "startup",
+      "commercial"
+    ],
+    "regions": [
+      "UAE"
+    ],
+    "projectTypes": [
+      "company",
+      "manufacturing"
+    ]
+  },
+  {
+    "id": "mnre-pli",
+    "name": "Solar PV module PLI",
+    "country": "India",
+    "type": "Manufacturing incentive",
+    "benefit": "Production-linked support for selected high-efficiency module manufacturers, tender/award-specific; no amount assumed for Welos",
+    "eligibility": "Eligible module manufacturing capacity and selected tender conditions; monitoring assembly does not establish eligibility",
+    "incorporation": "Eligible manufacturer under the relevant selection/tender rules",
+    "status": "Program documented; no new application window verified",
+    "deadline": null,
+    "evidence": "Manufacturing plan, capacity, investment, efficiency/integration and tender qualification evidence",
+    "nextAction": "Monitor official MNRE/implementing-agency notices; do not treat this as a lab/retrofit subsidy",
+    "sourceIds": [
+      "mnre-pli"
+    ],
+    "verifiedDate": "2026-11-27",
+    "audience": [
+      "startup",
+      "commercial"
+    ],
+    "regions": [
+      "India"
+    ],
+    "projectTypes": [
+      "manufacturing"
+    ]
   }
 ]

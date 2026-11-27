@@ -39,6 +39,6 @@ export function footerHtml() {
     <img src="/brand/welos-wordmark-ivory.svg" alt="WELOS" width="132" height="12" loading="lazy">
     <p>WELOS · Dubai, UAE. Concept hardware: the model, controller and simulations on this site describe a reference design, not a deployed product. Every number is computed by the open control engine or the sizing engine in this repository. Final designs need a site survey, structural review and local approvals.</p>
   </div>
-  <nav aria-label="Footer">${nav}<a href="#" data-ai-open>WELOS AI</a></nav>
+  <nav aria-label="Footer">${nav}<a href="#" data-ai-open>WELOS AI</a><a href="/business">Explore welOS Business ↗</a></nav>
 </footer>`;
 }

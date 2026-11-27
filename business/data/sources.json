@@ -215,5 +215,26 @@
     "url": "https://www.sewa.gov.ae/",
     "verifiedDate": "2026-11-27",
     "finding": "Official authority/service contact route. No export-credit entitlement verified in this review. Obtain written conditions."
+  },
+  {
+    "id": "fta-freezone",
+    "title": "FTA Free Zone Persons guide",
+    "url": "https://tax.gov.ae/Datafolder/Files/Guides/CT/Free%20Zone%20Persons%20-%2020%2005%202024%20final%20for%20GCD.pdf",
+    "verifiedDate": "2026-11-27",
+    "finding": "Qualifying Free Zone Persons may apply 0% to qualifying income, subject to conditions; not a blanket exemption or grant. Obtain tax advice for exact entity/activity."
+  },
+  {
+    "id": "mnre-pli",
+    "title": "MNRE Solar PV Module PLI Scheme",
+    "url": "https://mnre.gov.in/offerings/schemes-and-services/details/solar-pv-module-pli-scheme-kjNwYTMtQWa",
+    "verifiedDate": "2026-11-27",
+    "finding": "Production-linked support for selected high-efficiency solar PV manufacturers. No new application window or Welos eligibility verified. Monitoring assembly is not module manufacturing."
+  },
+  {
+    "id": "natural-earth",
+    "title": "Natural Earth country boundaries",
+    "url": "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_admin_0_countries.geojson",
+    "verifiedDate": "2026-11-27",
+    "finding": "Public-domain generalized geographic outlines. Research markers are illustrative, not installations."
   }
 ]

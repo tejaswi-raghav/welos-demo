@@ -9,14 +9,15 @@
     "preview": "vite preview",
     "test:control": "node --test src/control/engine.test.js",
     "test:model": "node --test src/model/parts.test.js",
-    "check": "npm run test:control && npm run test:model && npm run test:site && npm run test:twin && npm run test:business && npm run check:protected && npm run build",
+    "check": "npm run test:control && npm run test:model && npm run test:site && npm run test:twin && npm run test:business && npm run test:commercial && npm run check:protected && npm run build",
     "firmware:build": "pio run -d firmware",
     "test:site": "node --test src/site/*.test.js api/advisor.test.js",
     "test:twin": "node --test src/twin/sim.test.js src/twin/topology.test.js",
     "test:business": "node --test src/gen1/*.test.js src/business/*.test.js",
     "check:protected": "node scripts/check-protected.mjs",
     "export:business": "node scripts/export-business.mjs",
-    "prebuild": "node scripts/export-business.mjs"
+    "prebuild": "node scripts/export-business.mjs",
+    "test:commercial": "node --test src/commercial/*.test.js api/commercial-research.test.js"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^1.12.0",

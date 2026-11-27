@@ -11,7 +11,15 @@
       "pm",
       "thub"
     ],
-    "verifiedDate": "2026-11-27"
+    "verifiedDate": "2026-11-27",
+    "coordinates": [
+      17.385,
+      78.4867
+    ],
+    "solarDailyKwhM2": 5.0,
+    "solarBasis": "Editable 5.0 planning assumption, not measured site resource",
+    "partnersStatus": "No contracted Welos installation partners asserted; use official utility enrollment/vendor pathways",
+    "deploymentStatus": "Scenario only, no actual installation or customer count"
   },
   {
     "city": "Dubai",
@@ -26,7 +34,15 @@
       "epc",
       "connection"
     ],
-    "verifiedDate": "2026-11-27"
+    "verifiedDate": "2026-11-27",
+    "coordinates": [
+      25.2048,
+      55.2708
+    ],
+    "solarDailyKwhM2": 5.6748,
+    "solarBasis": "Existing NASA climatology in approved regional dataset",
+    "partnersStatus": "No contracted Welos installation partners asserted; use official utility enrollment/vendor pathways",
+    "deploymentStatus": "Scenario only, no actual installation or customer count"
   },
   {
     "city": "Abu Dhabi",
@@ -39,7 +55,15 @@
       "abu",
       "abu-old"
     ],
-    "verifiedDate": "2026-11-27"
+    "verifiedDate": "2026-11-27",
+    "coordinates": [
+      24.4539,
+      54.3773
+    ],
+    "solarDailyKwhM2": 5.8846,
+    "solarBasis": "Existing NASA climatology in approved regional dataset",
+    "partnersStatus": "No contracted Welos installation partners asserted; use official utility enrollment/vendor pathways",
+    "deploymentStatus": "Scenario only, no actual installation or customer count"
   },
   {
     "city": "Sharjah",
@@ -51,7 +75,15 @@
     "sourceIds": [
       "sewa"
     ],
-    "verifiedDate": "2026-11-27"
+    "verifiedDate": "2026-11-27",
+    "coordinates": [
+      25.3463,
+      55.4209
+    ],
+    "solarDailyKwhM2": 5.6748,
+    "solarBasis": "Existing NASA climatology in approved regional dataset",
+    "partnersStatus": "No contracted Welos installation partners asserted; use official utility enrollment/vendor pathways",
+    "deploymentStatus": "Scenario only, no actual installation or customer count"
   },
   {
     "city": "Bengaluru",
@@ -64,7 +96,15 @@
       "ka",
       "pm"
     ],
-    "verifiedDate": "2026-11-27"
+    "verifiedDate": "2026-11-27",
+    "coordinates": [
+      12.9716,
+      77.5946
+    ],
+    "solarDailyKwhM2": 5.0,
+    "solarBasis": "Editable 5.0 planning assumption, not measured site resource",
+    "partnersStatus": "No contracted Welos installation partners asserted; use official utility enrollment/vendor pathways",
+    "deploymentStatus": "Scenario only, no actual installation or customer count"
   },
   {
     "city": "Pune",
@@ -77,7 +117,15 @@
       "mh",
       "pm"
     ],
-    "verifiedDate": "2026-11-27"
+    "verifiedDate": "2026-11-27",
+    "coordinates": [
+      18.5204,
+      73.8567
+    ],
+    "solarDailyKwhM2": 5.0,
+    "solarBasis": "Editable 5.0 planning assumption, not measured site resource",
+    "partnersStatus": "No contracted Welos installation partners asserted; use official utility enrollment/vendor pathways",
+    "deploymentStatus": "Scenario only, no actual installation or customer count"
   },
   {
     "city": "Ahmedabad",
@@ -90,7 +138,15 @@
       "gj",
       "pm"
     ],
-    "verifiedDate": "2026-11-27"
+    "verifiedDate": "2026-11-27",
+    "coordinates": [
+      23.0225,
+      72.5714
+    ],
+    "solarDailyKwhM2": 5.0,
+    "solarBasis": "Editable 5.0 planning assumption, not measured site resource",
+    "partnersStatus": "No contracted Welos installation partners asserted; use official utility enrollment/vendor pathways",
+    "deploymentStatus": "Scenario only, no actual installation or customer count"
   },
   {
     "city": "Chennai",
@@ -103,7 +159,15 @@
       "tn",
       "pm"
     ],
-    "verifiedDate": "2026-11-27"
+    "verifiedDate": "2026-11-27",
+    "coordinates": [
+      13.0827,
+      80.2707
+    ],
+    "solarDailyKwhM2": 5.0,
+    "solarBasis": "Editable 5.0 planning assumption, not measured site resource",
+    "partnersStatus": "No contracted Welos installation partners asserted; use official utility enrollment/vendor pathways",
+    "deploymentStatus": "Scenario only, no actual installation or customer count"
   },
   {
     "city": "Delhi NCR",
@@ -116,6 +180,14 @@
       "delhi",
       "pm"
     ],
-    "verifiedDate": "2026-11-27"
+    "verifiedDate": "2026-11-27",
+    "coordinates": [
+      28.6139,
+      77.209
+    ],
+    "solarDailyKwhM2": 5.0,
+    "solarBasis": "Editable 5.0 planning assumption, not measured site resource",
+    "partnersStatus": "No contracted Welos installation partners asserted; use official utility enrollment/vendor pathways",
+    "deploymentStatus": "Scenario only, no actual installation or customer count"
   }
 ]

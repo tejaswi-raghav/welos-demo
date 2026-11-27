@@ -1,21 +1,11 @@
-# Commercial foundation
+# Public commercial research
 
-The original website remains the showroom. Open `/business` for the isolated commercial portal, `/prototype` for Gen1 planning, `/markets`, `/partners`, `/incentives`, `/investors` and `/enterprise` for their respective tools. Existing navigation remains unchanged.
+The premium experience lives in src/commercial, starting at /business. New routes: /prototype, /economics, /developers, /network, /incentives and /company. Existing /markets, /partners, /investors and /enterprise URLs remain compatible aliases. The original showroom remains unchanged.
 
-## Evidence and readiness
+Public data contains dated market/incentive research, public supplier listing observations and the prototype development BOM. Every customer/developer economic result is an indicative scenario, not a quote or engineering approval. India tariff, installed cost and solar resource are explicit assumptions; no subsidy or export entitlement is inferred.
 
-Software and planning only. No physical rig, certified installation, customer revenue, pilot contract, confirmed distribution partner or government award is asserted. The founders report AED10k BITS Pilani support; obtain receipt, conditions and available balance. Nationalities, incorporation, roles, IP ownership and cap table remain unknown and appear as gaps in application drafts.
+Company forecasts, investor decks, founder narratives and application drafts are no longer automatically exported or included as current public files. Local copies were preserved outside Git before removal. Prior commits, deployments, clones and caches can still contain older versions; this change cannot retract those copies and does not rewrite history. Do not treat a public Git repository as private storage.
 
-## Single sources of truth
+Only scripts/export-business.mjs's explicit allowlist enters public/resources and the website build. There is no fake password gate or claimed investor authentication. Detailed investor documents require an authorized private sharing workflow outside this public site. No lead-submission backend, CRM or email transmission exists; the Developer Studio exports a clearly labeled local inquiry draft.
 
-- `data/sources.json`: dated official-source register and limits.
-- `data/incentives.json`: program type, eligibility, incorporation, status, deadline, evidence and next step.
-- `data/markets.json`: nine-city market-entry comparison.
-- `data/prototype.json`: engineering procurement ceilings and real supplier references.
-- `data/finance-assumptions.json`: editable company model assumptions, all three cases.
-- `../src/business/finance.js`: shared company forecast and valuation sensitivity functions, used by browser and CSV exporter.
-- `../src/gen1/`: isolated battery-free pricing adapter, synthetic dispatch and read-only telemetry.
-
-Run `npm run export:business` after updating research/documents. This recalculates all three CSV forecasts and copies canonical resources into `public/resources` for downloads. It does not modify current product economics. `npm run build` performs this export automatically through prebuild. Editing the browser model is local and ephemeral; download JSON to preserve a scenario.
-
-Use the investor source deck and proposal as working materials with the stated limits. No application or partner outreach is submitted automatically. Do not assume an expired deadline remains open. Update research before a live proposal or application.
+The pure company-model functions under src/business/finance.js remain independently tested with a synthetic regression fixture. They are not imported by the public commercial experience. Public customer economics reuse the approved src/gen1 and src/site engines through isolated adapters.

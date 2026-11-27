@@ -4,7 +4,7 @@ import fs from 'node:fs';
 import { financialModel, valuationTargets } from './finance.js';
 import { ROUTES, routeName } from './routes.js';
 const read = n => JSON.parse(fs.readFileSync(`business/data/${n}.json`));
-const initial = read('finance-assumptions');
+const initial = JSON.parse(fs.readFileSync('src/business/finance.fixture.json'));
 test('Forecast reconciles revenue, gross profit, annual cash changes and funding gap across all scenarios', () => {
   for (const s of ['conservative', 'base', 'aggressive']) {
     const m = financialModel(initial, s);

@@ -1,4 +1,5 @@
 import { defineConfig } from "vite";
+import { PUBLIC_RESOURCE_URLS } from "./src/commercial/public-resources.js";
 import react from "@vitejs/plugin-react";
 import { resolve } from "node:path";
 import { existsSync } from "node:fs";
@@ -46,8 +47,15 @@ function welosChrome() {
   };
 }
 
-function commercialRewrite(req, _res, next) {
-  if (/^\/(business|prototype|markets|partners|incentives|investors|enterprise)\/?(?:\?|$)/.test(req.url || "")) req.url = "/commercial.html";
+function commercialRewrite(req, res, next) {
+  const pathname = new URL(req.url || "/", "http://localhost").pathname;
+  if (pathname.startsWith("/resources/") && !PUBLIC_RESOURCE_URLS.has(pathname)) {
+    res.statusCode = 404;
+    res.setHeader("Content-Type", "text/plain; charset=utf-8");
+    res.end("Resource unavailable");
+    return;
+  }
+  if (/^\/(business|prototype|markets|partners|incentives|investors|enterprise|economics|developers|network|company|build)\/?(?:\?|$)/.test(req.url || "")) req.url = "/commercial.html";
   next();
 }
 

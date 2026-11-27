@@ -1,0 +1,8 @@
+import React,{useEffect,useRef,useState} from 'react';
+export default function Workbench({mode='lab',selected='solar',exploded=false,cleaning=true,buildings=4,scale='neighborhood',onPick=()=>{}}){
+ const canvas=useRef(null),instance=useRef(null),pick=useRef(onPick),settings=useRef(null);pick.current=onPick;settings.current={selected,exploded,cleaning,buildings,scale};
+ const[status,setStatus]=useState('loading');
+ useEffect(()=>{let cancelled=false;import('./workbench.js').then(({createWorkbench})=>{if(cancelled)return;try{instance.current=createWorkbench(canvas.current,{mode,onPick:id=>pick.current(id)});instance.current.update(settings.current);setStatus('ready');}catch{setStatus('unavailable');}}).catch(()=>setStatus('unavailable'));return()=>{cancelled=true;instance.current?.dispose();instance.current=null;};},[mode]);
+ useEffect(()=>instance.current?.update({selected,exploded,cleaning,buildings,scale}),[selected,exploded,cleaning,buildings,scale]);
+ return <div className={`cx-workbench ${status}`}><canvas ref={canvas} aria-label={mode==='lab'?'Interactive concept CAD. Use the component buttons to select parts.':'Illustrative building portfolio. No actual installations.'}/>{status!=='ready'&&<div className="cx-fallback"><span className="cx-kicker">{status==='loading'?'Preparing concept view':'3D view unavailable'}</span><strong>{mode==='lab'?'The first welOS':'A proposed portfolio'}</strong><p>All specifications, costs and controls remain available below. WebGL is optional.</p></div>}<div className="cx-view-label">{mode==='lab'?'CONCEPT CAD · NOT TO SCALE':'DEPLOYMENT SCENARIO · NO ACTUAL SITES'}</div>{status==='ready'&&<button className="cx-reset" onClick={()=>instance.current?.reset()}>Reset view</button>}</div>;
+}
