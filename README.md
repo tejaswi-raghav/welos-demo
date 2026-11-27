@@ -66,3 +66,19 @@ Brand: the Solar Ember identity. The `WELOS` wordmark is vector (`public/brand/w
 npm run check            # engine, parts, sizing, twin simulation + topology tests, production build
 npm run firmware:build   # requires PlatformIO
 ```
+
+## Commercial foundation (isolated extension)
+
+Repository: [tejaswi-raghav/welos-demo](https://github.com/tejaswi-raghav/welos-demo). Verified Vercel domain: [welos-demo.vercel.app](https://welos-demo.vercel.app).
+
+The approved showroom, 3D assembly, Control OS, owner OS, existing product packages and simulations remain unchanged. The separate commercial portal starts at `/business` and provides `/prototype`, `/markets`, `/partners`, `/incentives`, `/investors` and `/enterprise`. The existing header is preserved. Clean routes require the exact Vercel rewrites or equivalent hosting support.
+
+See [business/README.md](business/README.md) for research, editable financial assumptions, incentive eligibility, investor materials and execution plans. [hardware/gen1](hardware/gen1) specifies a battery-free low-voltage demonstrator; it is not a certified grid installation or physically tested prototype. The new adapter is read-only and never fakes live hardware data.
+
+- `npm run export:business`: regenerate scenario CSVs and resource downloads from canonical files.
+- `npm run test:business`: battery-free, telemetry, finance and routing tests.
+- `npm run check:protected`: verify locked original files against the pre-integration SHA-256 baseline.
+- `node scripts/check-commercial-ssr.mjs`: render every new route and check download targets.
+- `npm run check`: all existing/new tests, protected-file check and build.
+
+Source/status dates and known limitations are explicit. Prices and valuation sensitivities are assumptions where marked. No applications, partner communications, merge or production deployment are performed automatically.

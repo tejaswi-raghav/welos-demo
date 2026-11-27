@@ -9,8 +9,8 @@ export default async function handler(req, res) {
     url.searchParams.set("limit", "5");
     const response = await fetch(url, {
       headers: {
-        "User-Agent": "WELOSConfigurator/1.0 (https://welos-five.vercel.app/; contact: tejaswi-raghav via GitHub)",
-        Referer: "https://welos-five.vercel.app/",
+        "User-Agent": "WELOSConfigurator/1.0 (https://welos-demo.vercel.app/; contact: tejaswi-raghav via GitHub)",
+        Referer: "https://welos-demo.vercel.app/",
         "Accept-Language": "en",
       },
       signal: AbortSignal.timeout(10000),
