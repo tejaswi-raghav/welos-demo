@@ -23,7 +23,7 @@ test('Cash payback accounts for annual maintenance, degradation and explicit rep
  const a=customerScenario(),b=customerScenario({maintenanceRate:.2});assert(b.annualNet<a.annualNet);let cash=-a.installedCost;for(const r of a.rows){cash+=r.net;assert.equal(r.cumulative,cash);}assert(a.rows[11].replacement>0);assert.equal(a.rows[0].replacement,0);assert.equal(customerScenario({unitRate:.01,maintenanceRate:.2}).paybackYears,null);
 });
 test('Roof/load/location/category/price boundaries reject invalid input rather than showing NaN',()=>{
- for(const v of [{roofM2:0},{roofM2:Infinity},{loadKwhDay:NaN},{unitRate:''},{maintenanceRate:-1},{category:'__proto__'},{city:'unknown'},{configuration:'battery'},{replacementYear:26}])assert.throws(()=>customerScenario(v));
+ for(const v of [{roofM2:0},{roofM2:Infinity},{loadKwhDay:NaN},{unitRate:''},{maintenanceRate:-1},{category:'__proto__'},{city:'unknown'},{configuration:'battery'},{replacementYear:26},{replacementYear:12.5}])assert.throws(()=>customerScenario(v));
 });
 test('Developer proposals aggregate exactly and allocate every building to a stage without invented discounts',()=>{
  const r=developerScenario({buildings:7,stages:3});assert.equal(r.installedCost,r.site.installedCost*7);assert.equal(r.annualGeneration,r.site.annualGeneration*7);assert.equal(r.annualNet,r.site.annualNet*7);assert.equal(r.schedule.reduce((s,p)=>s+p.buildings,0),7);assert.equal(r.paybackYears,r.site.paybackYears);assert.equal(developerScenario({buildings:2,stages:9}).schedule.length,2);assert.throws(()=>developerScenario({buildings:2.5}));assert.throws(()=>developerScenario({stages:0}));

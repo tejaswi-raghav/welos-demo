@@ -9,6 +9,7 @@ export function customerScenario(input={}) {
  const a={...DEFAULT_SCENARIO,...input},market=markets.find(m=>m.city===a.city);
  if(!market||!Object.hasOwn(CATEGORIES,a.category))throw new TypeError('Unknown city or building category');
  bounded(a.roofM2,1,100000,'roof');bounded(a.loadKwhDay,1,100000,'load');bounded(a.solarDailyKwhM2,.5,9,'solar resource');bounded(a.unitRate,.01,100,'unit rate');bounded(a.indiaInstalledPerKw,1000,500000,'installed cost');bounded(a.maintenanceRate,0,.2,'maintenance');bounded(a.replacementShare,0,1,'replacement');bounded(a.replacementYear,1,25,'replacement year');
+ if(!Number.isInteger(a.replacementYear))throw new RangeError('Replacement year must be a whole year');
  if(!['core-gen1','core-gen1-cleaning'].includes(a.configuration))throw new TypeError('Unknown configuration');
  const cleaning=a.configuration==='core-gen1-cleaning';
  const region=REGIONS.find(r=>r.name===a.city),utilityId=region?.utility||'dewa';
