@@ -14,6 +14,10 @@ Base: 8dd0c65457308fe3fd0d2be43199fe37a63bad81. Branch: codex/welos-business-int
 - Investor deck: seven slides rendered and individually inspected. Structure/layout/font checks and first-party PPTX reimport pass. A broken SVG preview on the first draft was corrected by embedding the existing repository PNG icon. No PowerPoint-native execution/animation verification is claimed.
 - CI: additive pull-request-only workflow runs check, server rendering and HTTP smoke checks. It has read-only repository permissions and no deployment job. Its remote run outcome must be inspected separately.
 
+## CI runner cleanup
+
+The first GitHub Actions run passed all functional/build/server-render and HTTP assertions, then stalled while closing the Node22 preview server. That run was canceled. The smoke test now closes client connections, explicitly closes server connections, bounds each request to15s and the entire script to90s, and the CI job to5min. Local verification of the corrected cleanup exits successfully. The replacement remote run must also pass before treating CI as complete.
+
 ## Browser evidence limitation
 
 Browser tools were attempted before implementation and retried later. Chrome provider unavailable; in-app and native browser calls timed out, reported concurrent user changes or expired continuation. No trustworthy baseline/final browser screenshots, interaction recordings, pixel comparison or manual responsive/camera/navigation interaction verification could be captured. No screenshots are fabricated. Rendered investor slides are presentation previews, not screenshots of the web portal.
