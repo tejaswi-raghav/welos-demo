@@ -1,0 +1,219 @@
+[
+  {
+    "id": "dewa",
+    "title": "Shams Dubai",
+    "url": "https://www.dewa.gov.ae/en/shamsdubai",
+    "verifiedDate": "2026-11-27",
+    "finding": "Grid connection and credit framework; customer-specific approval required."
+  },
+  {
+    "id": "d33",
+    "title": "DEWA D33 Solar PV Initiative",
+    "url": "https://www.dewa.gov.ae/en/consumer/solar-community/d33-solar-pv-initiative",
+    "verifiedDate": "2026-11-27",
+    "finding": "Company captive PV program with its own conditions, not a general grant."
+  },
+  {
+    "id": "epc",
+    "title": "DEWA enrolled contractors",
+    "url": "https://dewa.gov.ae/en/consumer/solar-community/enrolled-contractors-consultants",
+    "verifiedDate": "2026-11-27",
+    "finding": "Use current enrolled electrical and DRRG solar PV providers. Enrollment is not an endorsement."
+  },
+  {
+    "id": "connection",
+    "title": "DEWA connection process",
+    "url": "https://dewa.gov.ae/en/consumer/solar-community/connection-process",
+    "verifiedDate": "2026-11-27",
+    "finding": "Design, inspection, agreement and meter coordination through enrolled contractor."
+  },
+  {
+    "id": "abu",
+    "title": "Abu Dhabi self-supply licensing guide",
+    "url": "https://www.doe.gov.ae/-/media/Project/DOE/Department-Of-Energy/Media-Center-Publications/Guidance-document/Electricity-Generation-Licensing-Guide-for-self-supply-purposes.pdf",
+    "verifiedDate": "2026-11-27",
+    "finding": "Effective 2023 guide says small-scale residential PV licensing and net metering remain suspended, with specified exceptions. Obtain written current DoE/TAQA position."
+  },
+  {
+    "id": "abu-old",
+    "title": "Abu Dhabi older netting regulation",
+    "url": "https://doe.gov.ae/-/media/Project/DOE/Department-Of-Energy/Media-Center-Publications/English-Files/small-scale_solar_pv_energy_netting_regulation.pdf",
+    "verifiedDate": "2026-11-27",
+    "finding": "Older credit carry-forward framework conflicts with suspension guidance for sales planning. No export revenue underwrite."
+  },
+  {
+    "id": "hub71",
+    "title": "Hub71 Access",
+    "url": "https://www.hub71.com/index.php/program/access-programme",
+    "verifiedDate": "2026-11-27",
+    "finding": "AED 250,000 in-kind plus AED 250,000 cash for equity; relocation expectations. Confirm term sheet and cohort."
+  },
+  {
+    "id": "mbrif",
+    "title": "MBRIF FAQ",
+    "url": "https://mbrif.ae/faq-2/",
+    "verifiedDate": "2026-11-27",
+    "finding": "Accelerator nonfinancial support; Guarantee Scheme debt supported by guarantee, not a grant."
+  },
+  {
+    "id": "khalifa",
+    "title": "Khalifa Fund funding scheme",
+    "url": "https://www.khalifafund.ae/services/funding-scheme/",
+    "verifiedDate": "2026-11-27",
+    "finding": "Product-specific financing; UAE national ownership and Abu Dhabi criteria. Confirm program-specific age/company-age requirements."
+  },
+  {
+    "id": "nexus",
+    "title": "NEXUS application announcement",
+    "url": "https://www.wam.ae/en/article/c26yso8-khalifa-fund-opens-nexus-applications-for-emirati",
+    "verifiedDate": "2026-11-27",
+    "finding": "2026 deadline 20 September has passed. Eligibility includes Emirati ownership/residence conditions."
+  },
+  {
+    "id": "sme",
+    "title": "Mohammed Bin Rashid Fund registration",
+    "url": "https://www.thefund.ae/auth/register",
+    "verifiedDate": "2026-11-27",
+    "finding": "Funding registration states business 100% owned and managed by UAE nationals. Founder nationality unknown."
+  },
+  {
+    "id": "startup",
+    "title": "Startup India recognition",
+    "url": "https://www.startupindia.gov.in/content/sih/en/startupgov/startup-recognition-page.html",
+    "verifiedDate": "2026-11-27",
+    "finding": "Recognition process, not automatic cash award. Verify latest recognition thresholds and entity eligibility directly."
+  },
+  {
+    "id": "sisfs",
+    "title": "Startup India Seed Fund portal",
+    "url": "https://seedfund.startupindia.gov.in/",
+    "verifiedDate": "2026-11-27",
+    "finding": "Portal search notice lists last startup application date 31 May 2026. Treat current cycle as closed to new applications."
+  },
+  {
+    "id": "seed-rules",
+    "title": "SISFS guidelines",
+    "url": "https://www.startupindia.gov.in/content/dam/invest-india/Templates/public/Guidelines%20for%20Startup%20India%20Seed%20Fund%20Scheme.pdf",
+    "verifiedDate": "2026-11-27",
+    "finding": "Historical scheme grant up to INR 20 lakh and debt/convertible support up to INR 50 lakh; incorporation, DPIIT, shareholding and prior-support tests apply."
+  },
+  {
+    "id": "prayas",
+    "title": "NIDHI PRAYAS 2.0 innovators",
+    "url": "https://nidhi-prayas.org/innovators/",
+    "verifiedDate": "2026-11-27",
+    "finding": "Current program describes PC support up to INR 20 lakh or APC up to INR 40 lakh, subject to selection. Centre-specific call required. Older DST page still describes INR 10 lakh version."
+  },
+  {
+    "id": "prayas-old",
+    "title": "DST legacy PRAYAS overview",
+    "url": "https://nidhi.dst.gov.in/schemes-programmes/nidhiprayas/",
+    "verifiedDate": "2026-11-27",
+    "finding": "Legacy INR 10 lakh description; do not substitute it for PRAYAS 2.0 call rules."
+  },
+  {
+    "id": "elevate",
+    "title": "ELEVATE NxT 2026",
+    "url": "https://elevate.startupkarnataka.in/public/",
+    "verifiedDate": "2026-11-27",
+    "finding": "Page shows active NxT deeptech call up to INR 1 crore; deadline 14 December 2026 at 17:00 IST. Commercial solar assembly alone does not establish deeptech eligibility."
+  },
+  {
+    "id": "thub",
+    "title": "T-Hub startup programs",
+    "url": "https://www.t-hub.co/programs",
+    "verifiedDate": "2026-11-27",
+    "finding": "Incubation and sustainability programs; no universal cash entitlement."
+  },
+  {
+    "id": "tan",
+    "title": "Startup India Tamil Nadu 2026 report",
+    "url": "https://www.startupindia.gov.in/srf/portal/SRF_2026_Result_page/Tamil_Nadu_State_Report.pdf",
+    "verifiedDate": "2026-11-27",
+    "finding": "TANSEED described as seed equity initiative; current cohort terms and deadline require separate verification."
+  },
+  {
+    "id": "pm",
+    "title": "PM Surya Ghar consumer manual",
+    "url": "https://pmsg-production-public.s3.ap-south-1.amazonaws.com/download/Consumer_Manual_of_PM_Surya_Ghar.pdf",
+    "verifiedDate": "2026-11-27",
+    "finding": "Residential customer process. Standard central support commonly INR 30,000 per kW for first 2 kW plus INR 18,000 third kW, capped INR 78,000. Confirm latest category/location/vendor/DCR rules."
+  },
+  {
+    "id": "ts",
+    "title": "Telangana rooftop regulation 1 of 2025",
+    "url": "https://www.tgnpdcl.com/Utilites/Final%20Solar%20Roof%20top%20Regulation%201%20of%202025%2015112025.pdf",
+    "verifiedDate": "2026-11-27",
+    "finding": "2025 regulatory source rather than older FAQ; feasibility and connection approvals remain required."
+  },
+  {
+    "id": "ka",
+    "title": "BESCOM national portal",
+    "url": "https://srtpv.bescom.org/SRTPV/national_portal_for_solar_rooftop.jsp",
+    "verifiedDate": "2026-11-27",
+    "finding": "KERC and BESCOM consumer-specific PPA and connection process; page references July 2025 order."
+  },
+  {
+    "id": "mh",
+    "title": "MSEDCL rooftop process",
+    "url": "https://www.mahadiscom.in/en/consumer/grid-interactive-rooftop-renewable-energy-generating-system-regulation-2019/",
+    "verifiedDate": "2026-11-27",
+    "finding": "Net metering/net billing applications and current circulars. Recheck amendments and ToD treatment at proposal date."
+  },
+  {
+    "id": "gj",
+    "title": "SURYA Gujarat FAQ",
+    "url": "https://suryagujarat.guvnl.in/faq",
+    "verifiedDate": "2026-11-27",
+    "finding": "Portal/vendor pathway; Ahmedabad may be Torrent territory, establish actual licensee before quote."
+  },
+  {
+    "id": "tn",
+    "title": "Tamil Nadu solar portal",
+    "url": "https://www.tnebltd.gov.in/usrp/index.xhtml",
+    "verifiedDate": "2026-11-27",
+    "finding": "Solar application, DCR/ALMM and net feed-in information. Do not use Dubai credit rules."
+  },
+  {
+    "id": "delhi",
+    "title": "BSES rooftop FAQ September 2025",
+    "url": "https://www.bsesdelhi.com/documents/55701/1611949183/RTS_FAQ_Sep25.pdf",
+    "verifiedDate": "2026-11-27",
+    "finding": "Delhi licensee application pathway; NCR also includes Haryana/UP with different rules."
+  },
+  {
+    "id": "fx",
+    "title": "CBUAE exchange rates",
+    "url": "https://centralbank.ae/en/forex-eibor/exchange-rates/",
+    "verifiedDate": "2026-11-27",
+    "finding": "USD/AED 3.6725 used for budget conversion. INR exchange rate in model is an editable assumption, not a current quote."
+  },
+  {
+    "id": "solaredge",
+    "title": "SolarEdge Q3 2026 results",
+    "url": "https://investors.solaredge.com/news-releases/news-release-details/solaredge-announces-third-quarter-2026-financial-results",
+    "verifiedDate": "2026-11-27",
+    "finding": "Q3 revenue USD 326.1m illustrates hardware scale/cyclicality; not a Welos valuation multiple."
+  },
+  {
+    "id": "enphase",
+    "title": "Enphase investor relations",
+    "url": "https://investor.enphase.com/",
+    "verifiedDate": "2026-11-27",
+    "finding": "Q3 2026 results dated 27 October 2026 available. Use filings for scale and risk review; no observed trading multiple imported."
+  },
+  {
+    "id": "sensorfact",
+    "title": "ABB Sensorfact acquisition announcement",
+    "url": "https://new.abb.com/news/detail/122814/abb-to-acquire-sensorfact-expanding-its-digital-energy-management-offering",
+    "verifiedDate": "2026-11-27",
+    "finding": "Energy-management SaaS acquisition strategic precedent, not a disclosed transaction-multiple benchmark."
+  },
+  {
+    "id": "sewa",
+    "title": "SEWA official services",
+    "url": "https://www.sewa.gov.ae/",
+    "verifiedDate": "2026-11-27",
+    "finding": "Official authority/service contact route. No export-credit entitlement verified in this review. Obtain written conditions."
+  }
+]

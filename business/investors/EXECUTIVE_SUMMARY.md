@@ -1,0 +1,13 @@
+# WELOS executive summary
+
+WELOS proposes an intelligent rooftop operating layer combining solar performance visibility, water awareness and maintenance diagnostics. The initial commercial hypothesis is a battery-free monitoring retrofit through a qualified EPC, with separately priced optional monitoring and annual service contracts. Full new solar installations remain site-specific EPC projects with approved equipment and utility connection.
+
+The existing software showroom provides a seven-scene home, 27-part3D assembly, deterministic control demonstrations, product sizing/economics and owner experience. Those simulations remain intact. Gen1 adds isolated zero-storage planning, outage shutdown behavior and a validated read-only hardware-snapshot interface. The physical demonstrator is a plan, not a built product: nominal100W test panel into a guarded DC load, independent SELV auxiliary supply, sensors and supervised rinse loop. Budget AED8,556 including20% contingency, below AED10k. Quotes, design review, drivers, firmware port and physical tests remain open.
+
+Initial beachhead: Hyderabad existing-PV monitoring through one qualified installer, subject to validating founder access and demand. Dubai follows after safe repeatable pilots. Abu Dhabi requires written regulatory clarification; Sharjah exports earn no value in the new planning layer until verified. India approvals/subsidies are customer/state/DISCOM-specific. Incentives are researched with current deadlines and funding types; no award is asserted.
+
+Founders named by the user: Akhil Suravarapu and Tejaswi Raghavendra. Roles/credentials remain unconfirmed. Founders report AED10k support from BITS Pilani; receipt, conditions and available unrestricted balance require evidence. No customer revenue, contracted pilot, confirmed partner or government approval is claimed.
+
+Revenue model: proposed retrofit kit plus installation coordination, optional monitoring and service. Initial price/COGS/CAC/retention assumptions and three five-year scenarios are editable in /investors and business/data/finance-assumptions.json. Company projections are separate from solar-bill estimates and development BOM. Forecasts expose cash gaps without inventing financing inflows.
+
+The $100M equity ambition is reverse-engineered using editable revenue/ARR/EBITDA/acquisition sensitivities. It is not a present valuation or promise. Scale requires safe certified deployments, measured usefulness, paid renewals, repeatable contribution after CAC and credible working-capital funding. The next request is qualified engineering review, lab/instrument access, customer interviews and a scoped pilot pipeline. A specific fundraising amount awaits validated quotes, cash and pilot economics.

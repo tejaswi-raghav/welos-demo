@@ -1,0 +1,242 @@
+[
+  {
+    "id": "mbrif-a",
+    "name": "MBRIF Accelerator",
+    "country": "UAE",
+    "type": "Nonfinancial support",
+    "benefit": "Mentorship and market access; no grant amount",
+    "eligibility": "Innovative post-ideation business, UAE base or credible establishment plan",
+    "incorporation": "Confirm UAE establishment requirements in intake",
+    "status": "Program described; intake/deadline not confirmed",
+    "deadline": null,
+    "evidence": "Prototype, innovation evidence, team, UAE plan",
+    "nextAction": "Request current cohort eligibility before submitting",
+    "sourceIds": [
+      "mbrif"
+    ],
+    "verifiedDate": "2026-11-27"
+  },
+  {
+    "id": "mbrif-g",
+    "name": "MBRIF Guarantee Scheme",
+    "country": "UAE",
+    "type": "Debt guarantee",
+    "benefit": "Bank loan support subject to underwriting; repayable debt",
+    "eligibility": "Innovative business and bank diligence",
+    "incorporation": "UAE establishment/operating plan subject to program",
+    "status": "Program described; bank approval not obtained",
+    "deadline": null,
+    "evidence": "Cash forecast, repayment capacity, licenses, IP and prototype",
+    "nextAction": "Assess repayment capacity after pilot revenue",
+    "sourceIds": [
+      "mbrif"
+    ],
+    "verifiedDate": "2026-11-27"
+  },
+  {
+    "id": "hub71",
+    "name": "Hub71 Access",
+    "country": "UAE",
+    "type": "Equity + in-kind",
+    "benefit": "AED 250k cash for equity plus AED 250k in-kind; additional performance award possible",
+    "eligibility": "Pre-seed to Series A; at least one founder relocation expected",
+    "incorporation": "Confirm incorporation and Abu Dhabi relocation terms",
+    "status": "Application form visible; cohort deadline unconfirmed",
+    "deadline": null,
+    "evidence": "Pitch, actual revenue, cap table, founder biographies, relocation plan",
+    "nextAction": "Review dilution and relocation terms before applying",
+    "sourceIds": [
+      "hub71"
+    ],
+    "verifiedDate": "2026-11-27"
+  },
+  {
+    "id": "khalifa",
+    "name": "Khalifa Fund financing",
+    "country": "UAE",
+    "type": "Loan",
+    "benefit": "Product-specific financing, not a general grant",
+    "eligibility": "UAE national ownership and Abu Dhabi criteria; product-specific age/company-age",
+    "incorporation": "Abu Dhabi business; program conditions vary",
+    "status": "Programs described; founder eligibility unknown",
+    "deadline": null,
+    "evidence": "Nationality, license, ownership, financials and selected product",
+    "nextAction": "Confirm founder nationality and selected loan rules; pages contain differing age criteria",
+    "sourceIds": [
+      "khalifa"
+    ],
+    "verifiedDate": "2026-11-27"
+  },
+  {
+    "id": "nexus",
+    "name": "NEXUS 2026",
+    "country": "UAE",
+    "type": "Accelerator",
+    "benefit": "Training and mentoring; no equity per announcement",
+    "eligibility": "Emirati ownership/residence criteria in 2026 notice",
+    "incorporation": "Confirm 51% Emirati and Abu Dhabi residency conditions",
+    "status": "2026 window closed",
+    "deadline": "2026-09-20",
+    "evidence": "Founder identity, business plan, residency and ownership",
+    "nextAction": "Monitor a future call; do not submit to an expired window",
+    "sourceIds": [
+      "nexus"
+    ],
+    "verifiedDate": "2026-11-27"
+  },
+  {
+    "id": "sme",
+    "name": "Dubai SME / MBR Fund",
+    "country": "UAE",
+    "type": "SME finance / procurement",
+    "benefit": "Product-specific finance and membership benefits",
+    "eligibility": "Funding registration: 100% UAE national owned/managed",
+    "incorporation": "Dubai/UAE license requirements depend on service",
+    "status": "Portal present; eligibility unknown",
+    "deadline": null,
+    "evidence": "Nationality, license, cap table, business case",
+    "nextAction": "Identify exact service and confirm ownership criteria",
+    "sourceIds": [
+      "sme"
+    ],
+    "verifiedDate": "2026-11-27"
+  },
+  {
+    "id": "d33",
+    "name": "DEWA D33 initiative",
+    "country": "UAE",
+    "type": "Customer energy program",
+    "benefit": "Captive PV arrangement under program conditions; no startup grant",
+    "eligibility": "Eligible company and approved design",
+    "incorporation": "Relevant licensed customer/EPC",
+    "status": "Published program; project approval required",
+    "deadline": null,
+    "evidence": "Customer maximum demand, design, eligible equipment, enrolled EPC",
+    "nextAction": "Ask DEWA/EPC about site eligibility, not startup cash",
+    "sourceIds": [
+      "d33"
+    ],
+    "verifiedDate": "2026-11-27"
+  },
+  {
+    "id": "dpiit",
+    "name": "DPIIT recognition",
+    "country": "India",
+    "type": "Recognition",
+    "benefit": "Access pathway to qualifying benefits; no automatic cash",
+    "eligibility": "Qualifying Indian entity and innovation criteria",
+    "incorporation": "Eligible registered entity; verify current thresholds",
+    "status": "Recognition service described",
+    "deadline": null,
+    "evidence": "Incorporation, ownership, innovation narrative",
+    "nextAction": "Resolve incorporation and recognition before grant claims",
+    "sourceIds": [
+      "startup"
+    ],
+    "verifiedDate": "2026-11-27"
+  },
+  {
+    "id": "sisfs",
+    "name": "Startup India Seed Fund",
+    "country": "India",
+    "type": "Grant / debt / convertible",
+    "benefit": "Historical: up to INR 20 lakh grant; up to INR 50 lakh debt/convertible",
+    "eligibility": "DPIIT, <=2 years at application, Indian promoters >=51%, prior support restrictions",
+    "incorporation": "Indian eligible entity required",
+    "status": "Closed to new startup applications per portal notice",
+    "deadline": "2026-05-31",
+    "evidence": "DPIIT, incorporation date, cap table, innovation and prior grants",
+    "nextAction": "Monitor successor/extension; no fresh application assumption",
+    "sourceIds": [
+      "sisfs",
+      "seed-rules"
+    ],
+    "verifiedDate": "2026-11-27"
+  },
+  {
+    "id": "prayas",
+    "name": "NIDHI PRAYAS 2.0",
+    "country": "India",
+    "type": "Prototype grant",
+    "benefit": "Up to INR 20 lakh PC or INR 40 lakh APC, selection-dependent",
+    "eligibility": "Physical technology prototype; innovator Indian citizen >=18; IP rights; prior funding limits",
+    "incorporation": "Individuals can qualify; startup requirements and IP assignment apply",
+    "status": "Program current; centre-specific call not verified",
+    "deadline": null,
+    "evidence": "Lead innovator agreement, citizenship/age, IP, technical BOM and milestones",
+    "nextAction": "Select a PRAYAS Centre, verify call and version; disclose BITS support",
+    "sourceIds": [
+      "prayas",
+      "prayas-old"
+    ],
+    "verifiedDate": "2026-11-27"
+  },
+  {
+    "id": "elevate",
+    "name": "ELEVATE NxT 2026",
+    "country": "India",
+    "type": "Grant-in-aid",
+    "benefit": "Up to INR 1 crore, milestone-based selection",
+    "eligibility": "Pan-India eligible entity; substantial deeptech/IP case; prior ELEVATE restrictions",
+    "incorporation": "Eligible entity and Karnataka commitments per call",
+    "status": "Active call shown on official page",
+    "deadline": "2026-12-14T17:00:00+05:30",
+    "evidence": "Entity proof, deeptech/IP evidence, prior grants, proposal",
+    "nextAction": "Screen technical eligibility now; ordinary integration may not qualify",
+    "sourceIds": [
+      "elevate"
+    ],
+    "verifiedDate": "2026-11-27"
+  },
+  {
+    "id": "thub",
+    "name": "T-Hub sustainability programs",
+    "country": "India",
+    "type": "Incubation",
+    "benefit": "Program-specific mentorship and pilot access; cash unconfirmed",
+    "eligibility": "Program-specific stage and sector",
+    "incorporation": "Entity requirements depend on cohort",
+    "status": "Program directory current; relevant deadline unverified",
+    "deadline": null,
+    "evidence": "Prototype overview, customer case, team and pilot request",
+    "nextAction": "Request current AIC sustainability cohort terms",
+    "sourceIds": [
+      "thub"
+    ],
+    "verifiedDate": "2026-11-27"
+  },
+  {
+    "id": "tan",
+    "name": "TANSEED",
+    "country": "India",
+    "type": "Seed equity research lead",
+    "benefit": "Amount/terms vary by cohort; not assumed non-dilutive",
+    "eligibility": "Tamil Nadu/state program criteria; exact call unverified",
+    "incorporation": "Confirm Tamil Nadu registration and ownership conditions",
+    "status": "Current open cohort not verified",
+    "deadline": null,
+    "evidence": "Entity and founder eligibility, cap table, prior funds",
+    "nextAction": "Read current term sheet/call before treating as funding",
+    "sourceIds": [
+      "tan"
+    ],
+    "verifiedDate": "2026-11-27"
+  },
+  {
+    "id": "pm",
+    "name": "PM Surya Ghar",
+    "country": "India",
+    "type": "Customer subsidy",
+    "benefit": "Standard residential CFA up to INR 78,000 at >=3 kW, eligibility-dependent",
+    "eligibility": "Eligible residential electricity consumer, approved process, compliant modules/vendor",
+    "incorporation": "Customer benefit; Welos startup does not receive this as a grant",
+    "status": "Consumer program documented; site approval required",
+    "deadline": null,
+    "evidence": "Consumer bill, rooftop rights, application, compliant equipment, commissioning, bank details",
+    "nextAction": "Use national portal and actual DISCOM; show price before subsidy",
+    "sourceIds": [
+      "pm"
+    ],
+    "verifiedDate": "2026-11-27"
+  }
+]
