@@ -1,0 +1,143 @@
+{
+  "version": 1,
+  "currency": "USD",
+  "basis": "Synthetic test fixture, not company forecasts",
+  "fx": {
+    "aedPerUsd": 3.6725,
+    "inrPerUsd": 85,
+    "inrBasis": "Budget assumption; replace with supplier settlement FX, not a live rate"
+  },
+  "openingCashUsd": 1000,
+  "openingCashBasis": "Synthetic regression-test balance",
+  "taxRate": 0.15,
+  "arDays": 30,
+  "inventoryDays": 60,
+  "payableDays": 30,
+  "vatFloatDays": 30,
+  "capexUsd": [
+    2000,
+    4000,
+    6000,
+    8000,
+    10000
+  ],
+  "depreciationRate": 0.2,
+  "markets": [
+    {
+      "id": "uae",
+      "currency": "AED",
+      "price": 1184.0,
+      "hardware": 333.0,
+      "landed": 55.5,
+      "installation": 166.5,
+      "warrantyRate": 0.03,
+      "cac": 222.0,
+      "monthlyFee": 14.43,
+      "monthlyCost": 4.44,
+      "annualServiceFee": 92.5,
+      "annualServiceCost": 55.5,
+      "vatRate": 0.05
+    },
+    {
+      "id": "india",
+      "currency": "INR",
+      "price": 16650.0,
+      "hardware": 4810.0,
+      "landed": 740.0,
+      "installation": 1480.0,
+      "warrantyRate": 0.03,
+      "cac": 2220.0,
+      "monthlyFee": 184.63,
+      "monthlyCost": 55.5,
+      "annualServiceFee": 666.0,
+      "annualServiceCost": 370.0,
+      "vatRate": 0.18
+    }
+  ],
+  "scenarios": {
+    "conservative": {
+      "uae": [
+        0,
+        2,
+        7,
+        15,
+        35
+      ],
+      "india": [
+        2,
+        6,
+        20,
+        50,
+        100
+      ],
+      "attach": 0.35,
+      "churn": 0.18,
+      "opex": [
+        5000,
+        10000,
+        20000,
+        40000,
+        80000
+      ]
+    },
+    "base": {
+      "uae": [
+        0,
+        4,
+        14,
+        30,
+        70
+      ],
+      "india": [
+        4,
+        12,
+        40,
+        100,
+        200
+      ],
+      "attach": 0.6,
+      "churn": 0.1,
+      "opex": [
+        10000,
+        20000,
+        40000,
+        80000,
+        160000
+      ]
+    },
+    "aggressive": {
+      "uae": [
+        0,
+        6,
+        21,
+        45,
+        105
+      ],
+      "india": [
+        6,
+        18,
+        60,
+        150,
+        300
+      ],
+      "attach": 0.8,
+      "churn": 0.06,
+      "opex": [
+        15000,
+        30000,
+        60000,
+        120000,
+        240000
+      ]
+    }
+  },
+  "valuation": {
+    "targetEquityUsd": 100000000,
+    "netDebtUsd": 0,
+    "hardwareRevenueMultiple": 1.5,
+    "arrMultiple": 6,
+    "ebitdaMultiple": 10,
+    "strategicPremium": 0.2,
+    "multipleBasis": "Sensitivity assumptions, not observed public trading or acquisition multiples; no current enterprise values inferred from filings"
+  }
+}

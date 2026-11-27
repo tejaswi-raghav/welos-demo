@@ -13,14 +13,14 @@ const server = await createServer({
 try {
   const {
     App
-  } = await server.ssrLoadModule('/src/business/main.jsx');
+  } = await server.ssrLoadModule('/src/commercial/main.jsx');
   const React = await import('react');
   const {
     renderToStaticMarkup
   } = await import('react-dom/server');
   const {
     ROUTES
-  } = await server.ssrLoadModule('/src/business/routes.js');
+  } = await server.ssrLoadModule('/src/commercial/routes.js');
   for (const path of Object.keys(ROUTES)) {
     const html = renderToStaticMarkup(React.createElement(App, {
       path: `/${path}`

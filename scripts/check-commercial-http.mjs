@@ -20,7 +20,7 @@ try {
   console.log('Starting built production preview');
   prod = await preview({ preview: { host: '127.0.0.1', port: 4181, strictPort: true } });
   for (const port of [5181, 4181]) {
-    for (const route of ['business','prototype','markets','partners','incentives','investors','enterprise']) {
+    for (const route of ['business','prototype','economics','developers','network','incentives','company','markets','partners','investors','enterprise','build']) {
       for (const suffix of ['', '/', '?review=1']) {
         const r = await request(`http://127.0.0.1:${port}/${route}${suffix}`);
         assert.equal(r.status, 200);
@@ -32,11 +32,18 @@ try {
       assert.equal(r.status, 200);
       assert(!(await r.text()).includes('commercial-root'));
     }
-    const ppt = await request(`http://127.0.0.1:${port}/resources/business/investors/WELOS_INVESTOR_PITCH.pptx`);
-    assert.equal(ppt.status, 200);
-    assert.deepEqual(Buffer.from(await ppt.arrayBuffer()), fs.readFileSync('public/resources/business/investors/WELOS_INVESTOR_PITCH.pptx'));
-    console.log(`HTTP routes passed on ${port}: seven commercial, six original, slash/query variants and byte-exact PPTX download`);
+    for (const resource of ['business/investors/WELOS_INVESTOR_PITCH.pptx','business/data/finance-assumptions.json']) {
+      const r = await request(`http://127.0.0.1:${port}/resources/${resource}`);
+      assert.equal(r.status, 404, 'Private resource must not be served');
+    }
+    console.log(`HTTP routes passed on ${port}: commercial/legacy routes and private resources denied`);
   }
+  const research = await request('http://127.0.0.1:5181/api/commercial-research?resource=incentives');
+  assert.equal(research.status, 200);
+  const payload = await research.json();
+  assert.equal(payload.schemaVersion, 1);
+  assert(payload.data.some(program => program.id === 'pm'));
+  console.log('Public research endpoint returned dated, allowlisted data');
 } finally {
   console.log('Closing verification servers');
   dev?.httpServer?.closeAllConnections();

@@ -40,6 +40,26 @@
       "destination": "/commercial.html"
     },
     {
+      "source": "/economics",
+      "destination": "/commercial.html"
+    },
+    {
+      "source": "/developers",
+      "destination": "/commercial.html"
+    },
+    {
+      "source": "/network",
+      "destination": "/commercial.html"
+    },
+    {
+      "source": "/incentives",
+      "destination": "/commercial.html"
+    },
+    {
+      "source": "/company",
+      "destination": "/commercial.html"
+    },
+    {
       "source": "/markets",
       "destination": "/commercial.html"
     },
@@ -48,15 +68,15 @@
       "destination": "/commercial.html"
     },
     {
-      "source": "/incentives",
-      "destination": "/commercial.html"
-    },
-    {
       "source": "/investors",
       "destination": "/commercial.html"
     },
     {
       "source": "/enterprise",
+      "destination": "/commercial.html"
+    },
+    {
+      "source": "/build",
       "destination": "/commercial.html"
     }
   ]

@@ -67,18 +67,18 @@ npm run check            # engine, parts, sizing, twin simulation + topology tes
 npm run firmware:build   # requires PlatformIO
 ```
 
-## Commercial foundation (isolated extension)
+## Premium commercial experience (isolated extension)
 
-Repository: [tejaswi-raghav/welos-demo](https://github.com/tejaswi-raghav/welos-demo). Verified Vercel domain: [welos-demo.vercel.app](https://welos-demo.vercel.app).
+Repository: [tejaswi-raghav/welos-demo](https://github.com/tejaswi-raghav/welos-demo). The approved showroom, models, animation, Control OS, configurator, Owner OS and optional battery scenarios remain unchanged.
 
-The approved showroom, 3D assembly, Control OS, owner OS, existing product packages and simulations remain unchanged. The separate commercial portal starts at `/business` and provides `/prototype`, `/markets`, `/partners`, `/incentives`, `/investors` and `/enterprise`. The existing header is preserved. Clean routes require the exact Vercel rewrites or equivalent hosting support.
+Start at `/business`: Prototype Lab (`/prototype`), Energy Economics (`/economics`), Developer Studio (`/developers`), welOS Network (`/network`), Incentive Finder (`/incentives`) and Company (`/company`). Existing commercial URLs remain compatible aliases. The showroom header stays unchanged; one footer link opens the commercial portal, which has its own navigation and return link.
 
-See [business/README.md](business/README.md) for research, editable financial assumptions, incentive eligibility, investor materials and execution plans. [hardware/gen1](hardware/gen1) specifies a battery-free low-voltage demonstrator; it is not a certified grid installation or physically tested prototype. The new adapter is read-only and never fakes live hardware data.
+See [business/README.md](business/README.md), [hardware/gen1](hardware/gen1) and [public resource policy](docs/integration/PUBLIC_RESOURCE_POLICY.md). Company forecasts, investor decks, founder details and application drafts are excluded from current public resources; old history/caches cannot be retracted by this change. The demo login is not used as access control.
 
-- `npm run export:business`: regenerate scenario CSVs and resource downloads from canonical files.
-- `npm run test:business`: battery-free, telemetry, finance and routing tests.
-- `npm run check:protected`: verify locked original files against the pre-integration SHA-256 baseline.
-- `node scripts/check-commercial-ssr.mjs`: render every new route and check download targets.
+- `npm run export:business`: publish only explicitly allowlisted product/research resources.
+- `npm run test:commercial`: customer/developer economics, eligibility, data and privacy tests.
 - `npm run check`: all existing/new tests, protected-file check and build.
+- `node scripts/check-commercial-ssr.mjs`: render new routes and check download targets.
+- `node scripts/check-commercial-http.mjs`: development/preview route and private-resource checks.
 
-Source/status dates and known limitations are explicit. Prices and valuation sensitivities are assumptions where marked. No applications, partner communications, merge or production deployment are performed automatically.
+Three-dimensional concept views and rollout scenarios are illustrative. No physical validation, professional approval, customer installations, partner contracts or financing offer is implied. Inquiry drafts stay local; no backend submission is claimed. Source dates, eligibility gaps and model assumptions remain visible. Do not merge or deploy without the owner's explicit approval.
