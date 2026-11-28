@@ -1,0 +1,6 @@
+city,country,access,pain,pilotFeasibility,serviceEase,approvalClarity,weightedHypothesis,decision
+Hyderabad,India,5,4,4,4,3,4.10,Validate first
+Dubai,UAE,3,4,4,3,4,3.60,Expansion candidate
+Abu Dhabi,UAE,2,4,3,2,2,2.70,Confirm current pathway
+Bengaluru,India,3,4,3,3,3,3.25,Compare after launch
+Pune,India,2,4,3,3,3,3.00,Compare after launch
