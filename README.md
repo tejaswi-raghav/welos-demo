@@ -67,6 +67,10 @@ npm run check            # engine, parts, sizing, twin simulation + topology tes
 npm run firmware:build   # requires PlatformIO
 ```
 
+## India mode
+
+`/india.html` and `/india-cities.html` add battery-free, grid-tied solar for ten Indian cities in rupees, beside the unchanged UAE configurator. Verification state, assumptions, privacy notes and gaps are in [docs/india.md](docs/india.md). Test with `npm run test:india`.
+
 ## Commercial foundation (isolated extension)
 
 Repository: [tejaswi-raghav/welos-demo](https://github.com/tejaswi-raghav/welos-demo). Verified Vercel domain: [welos-demo.vercel.app](https://welos-demo.vercel.app).
