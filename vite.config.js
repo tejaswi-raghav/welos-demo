@@ -4,6 +4,15 @@ import { resolve } from "node:path";
 import { existsSync } from "node:fs";
 import { pathToFileURL } from "node:url";
 import { headerHtml, footerHtml, headTags } from "./src/ui/chrome-html.js";
+import { INDIA_PAGES, indiaHeaderHtml, indiaFooterHtml, marketSwitch } from "./src/india/chrome-html.js";
+
+// India pages get their own header and footer. The UAE product page gains only the market switch.
+function pageHeader(page) {
+  if (INDIA_PAGES.includes(page)) return indiaHeaderHtml(page);
+  const html = headerHtml(page);
+  if (page !== "product") return html;
+  return html.replace('class="site-head"', 'class="site-head market-page"').replace('<button type="button" class="ai-btn"', `${marketSwitch("uae")}<button type="button" class="ai-btn"`);
+}
 
 // Serves the Vercel functions in /api during `npm run dev`, so location search,
 // climate lookup and the AI advisor work locally exactly as they do on Vercel.
@@ -41,7 +50,7 @@ function welosChrome() {
     name: "welos-chrome",
     transformIndexHtml(html) {
       const page = html.match(/<html[^>]*data-page="([a-z]+)"/)?.[1] || "";
-      return html.replace("<!--head-->", headTags).replace("<!--header-->", headerHtml(page)).replace("<!--footer-->", footerHtml());
+      return html.replace("<!--head-->", headTags).replace("<!--header-->", pageHeader(page)).replace("<!--footer-->", INDIA_PAGES.includes(page) ? indiaFooterHtml() : footerHtml());
     },
   };
 }
@@ -71,6 +80,8 @@ export default defineConfig({
         explorer: resolve(__dirname, "explorer.html"),
         control: resolve(__dirname, "control.html"),
         product: resolve(__dirname, "product.html"),
+        india: resolve(__dirname, "india.html"),
+        indiaCities: resolve(__dirname, "india-cities.html"),
         signin: resolve(__dirname, "signin.html"),
         os: resolve(__dirname, "os.html"),
       },
